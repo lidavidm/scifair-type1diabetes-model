@@ -1,0 +1,45 @@
+# XPP file for simulating AME system
+# Modified from Mahaffy-Keshet's paper by David Li
+
+p = a14*E*B/a15
+f1 = p^a1/(a2^a1+p^a1)
+f2 = a4*a5^a3/(a5^a3+p^a3)
+
+A' = f1*(a6+a7*M)-a8*A-a9*A^2
+M'= a10*f2*A-f1*a16*a7*M-a11*M
+E' = a12*(1-f2)*A-a13*E
+
+# Constant beta cells
+par B=1
+
+# Unstable past Hopf
+# init A=1.574,M=0.777,E=0.387
+# par a15=16.31
+
+# Stable in Hopf (bistability?)
+# init A=1.061509,M=0.3559892,E=0.2799103
+# par a15=10.53
+
+# Cycle in Hopf; cycles always die
+# init A=1.390449,M=1.762467,E=0.1478556
+# par a15=10.78
+
+# init A=0.4261225,M=0.07838148,E=0.121778
+# init a15=3.866
+# a15'=6/1000
+
+# init A=0.5,M=0,E=1
+# init a15=1
+# a15'=0.42/600
+
+init A=0.5,M=0,E=1
+par a15=-1
+
+par a1=2,a2=2,a3=3,a4=0.7,a5=1,a6=0.02
+par a7=20,a8=1.0,a9=1.0,a10=1,a11=0.01,a12=0.1
+par a13=0.3,a14=50,a16=0.1,a17=0.14
+@ dt=0.05
+@ total=600
+@ xlo=0,xhi=600,ylo=0,yhi=4
+@ XP=t, YP=A
+done

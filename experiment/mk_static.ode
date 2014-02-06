@@ -1,0 +1,26 @@
+# XPP file for simulating AME system
+# Modified from Mahaffy-Keshet's paper by David Li
+
+p = a14*E*B/a15
+f1 = p^a1/(a2^a1+p^a1)
+f2 = a4*a5^a3/(a5^a3+p^a3)
+
+A' = f1*(a6+a7*M)-a8*A-a9*A^2
+M'= a10*f2*A-f1*a16*a7*M-a11*M
+E' = a12*(1-f2)*A-a13*E
+
+# Constant beta cells
+par B=1
+
+# Steady-state for generating a bifurcation diagram
+init A=0.01961524,M=2.802597e-45,E=0.006538414
+par a15=0
+
+par a1=2,a2=2,a3=3,a4=0.7,a5=1,a6=0.02
+par a7=20,a8=1.0,a9=1.0,a10=1,a11=0.01,a12=0.1
+par a13=0.3,a14=50,a16=0.1,a17=0.14
+@ dt=0.05
+@ total=200
+@ xlo=0,xhi=200,ylo=0,yhi=4
+@ NPLOT=4, XP=t, YP=A, XP2=t, YP2=M, XP3=t, YP3=E
+done
