@@ -1,0 +1,87 @@
+\environment env_whitepaper
+
+\starttext
+
+\title{Modeling of Arctic Ice: Whitepaper \hfill \tf\color[black]{David Li <li.davidm96@gmail.com>}}
+
+\startcolumns[n=2,distance=0.2cm]
+  \setupalign[flushleft,verytolerant]
+  \startsection[title={Importance}]
+    As climate change inexorably alters the climate of this planet,
+    understanding the effects of such change has become more important than
+    ever before. In particular, research has shown that Arctic ice can have
+    a significant effect on weather in North America and Europe and may have
+    played a role in recent severe winter storms \cite{Greene2012}.
+  \stopsection
+
+  \startsection[title={Background}]
+    The Arctic Ocean is covered by floating ice termed Arctic ice; the
+    thickness and coverage of this ice varies throughout the year and over
+    time \cite{Polyak2010}. The ice affects weather by means of the Arctic
+    Oscillation, an atmospheric system \cite{Greene2012}. The less ice
+    present, the more heat the ocean absorbs during the summer in a process
+    termed the \quotation{ice-albedo feedback mechanism}. This heat is
+    released into the atmosphere via evaporation in the autumn, increasing
+    atmospheric pressure and moisture and weakening the polar vortex and jet
+    stream currents. The former contains cold air and the latter controls
+    the persistence of that air in lower latitudes.
+
+    The ice can be modeled with qualitative models such as the one described
+    in Abbot et.\ al.\ 2011 \cite{Abbot2011}. Mathematical analysis of such
+    models can reveal bifurcations, or qualitative changes in behavior; such
+    findings can be applied to predict similar changes in real-world
+    systems. One such bifurcation is termed a Hopf bifurcation and is of
+    particular note because when a system contains slowly varying
+    bifurcation parameters, the qualitative change in behavior will be
+    delayed and occur later than expected mathematically \cite{Baer1989}.
+  \stopsection
+
+  \startsection[title={What’s Not Known}]
+    Hopf bifurcations have not been applied to shorter-term Arctic ice
+    research; it is not known whether one exists, nor have researchers
+    searched for them in qualitative models as has been done for other
+    bifurcation types. For instance, Abbot’s study only considered
+    saddle-node bifurcations \cite{Abbot2011}. And in particular, greenhouse
+    gas levels, which steadily rise, may serve as a slowly varying
+    bifurcation parameter.
+  \stopsection
+
+  \startsection[title={Question}]
+    As the presence of bifurcations in climate models would greatly impact
+    the conclusions drawn from those models, and Hopf bifurcations have not
+    yet been applied to these models, then naturally this question follows:
+    how does the level of greenhouse gas as a slow parameter (one that
+    continuously varies at a slow rate) affect the behavior of an Arctic sea
+    ice model, and how can those conclusions be applied to a general climate
+    model?
+  \stopsection
+
+  \startsection[title={Required Resources}]
+    Due to the nature of the qualitative model, simulation is certainly
+    doable on commodity computer hardware. Thus, no special equipment is
+    necessary to investigate this question. However, being able to consult
+    with a qualified climate scientist would help in interpreting the
+    results of the model and making better conclusions.
+  \stopsection
+
+  \startsection[title={Impact}]
+    A positive result (i.e. the presence of a Hopf bifurcation) would signal
+    the possibility of a major change in the behavior of Arctic sea ice, a
+    potentially worrying scenario in terms of the effect on weather,
+    particularly winter weather. Meanwhile, a negative result would
+    confirm that no such change is likely to occur if current trends
+    continue. In either case, the results would help scientists modeling and
+    predicting the behavior of Arctic sea ice, which in turn would affect
+    the development of weather models incorporating that information;
+    policymakers could also use the data to better make decisions on
+    safeguards and preparation for climate change.
+  \stopsection
+\stopcolumns
+\page[yes]
+\startsection[title={References}]
+  \setupalign[flushleft]
+  \indenting[no]
+  \placebibliography{summary.bib}
+\stopsection
+
+\stoptext

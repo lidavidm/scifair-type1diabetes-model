@@ -1,0 +1,80 @@
+\startenvironment env_standard
+
+  % Page
+  \setuppapersize[letter]
+  \setuplayout[width=6.5in,height=10in,topspace=0.5in,backspace=1in,
+    header=0.5in,footer=0.5in,bottomspace=0.5in]
+  \setuppagenumbering[state=stop]
+
+  % Typography
+
+  \definefontfeature[default][mode=node, kern=yes, liga=yes, protrusion=quality,expansion=quality]
+  \setupalign[flushleft,nothyphenated]
+  \usemodule[simplefonts][size=10pt]
+  \setmainfont[Roboto]
+  \definesimplefont[light][Roboto Light][size=12pt,features=oldstyle]
+  \definesimplefont[regular][Roboto][size=11pt,features=oldstyle]
+  \setupindenting[0.25in,next]
+  \indenting[yes]
+
+  % Headers
+  \definecolor[iceblue][r=.04,g=.39,b=.64,s=0.0]
+  \definecolor[icegrey][s=1.0]%[s=0.7]
+  \setuphead[title][style={\regular}, color=iceblue,before={},after={}]
+  \setuphead[section][number=no, color=iceblue, style=\tf, before={\blank[0.125cm]},after={\blank[0.1cm]}]
+
+% Bibliography
+
+\usemodule[librarian]
+\CreateField{url}
+\CreateField{encyclopedia}
+\def\cite#1{\Cite{#1}{bibliography}{[\EntryNumber{bibliography}]}{[\EntryNumberFor{#1}{bibliography}]}}
+
+\def\typesetref#1{
+\ifcsname#1@entrytype\endcsname
+ \csname#1@entrytype\endcsname
+ \else
+ \errmessage{Unknown entry type: `#1'}%
+ \fi
+}
+\def\createtype#1{%
+ \expandafter\def\csname#1@entrytype\endcsname
+ }
+
+\def\space{~}
+\def\makerefname{%
+ \ifnum\NameCount>1
+ \ifnum\NameCount=\tempcount\relax \space\& \else \space \& \fi
+ \fi
+ \AbbreviateFirstname
+ \Lastname, \Firstname
+ }
+\createtype{article}{\RetrieveField{title}. {\em \RetrieveField{journal}, \RetrieveField{volume}}.}
+
+\createtype{book}{\RetrieveField{title}. Retrieved from \RetrieveField{url}.}
+\createtype{encyclopedia}{\RetrieveField{title}. In {\em
+    \RetrieveField{encyclopedia}}. Retrieved from \RetrieveField{url}.}
+
+\def\MakeReference{
+  \RetrieveFieldIn{entrytype}\temp
+  \RetrieveFieldIn{namenumber}\tempcount
+  \ifx\tempcount\empty
+  \def\tempcount{0}%
+  \fi
+
+  \par
+  [\EntryNumber{bibliography}]:
+  \ReadName{\makerefname} (\RetrieveField{year}).
+  \typesetref\temp
+  \par
+}
+\def\placebibliography#1{
+
+\indenting[no]
+\setupalign[right,nothyphenated,verytolerant]
+\BibFile{#1}
+\EveryPar{\hangafter=1\hangindent=0.5in\relax}
+\ReadList{bibliography}
+}
+
+\stopenvironment

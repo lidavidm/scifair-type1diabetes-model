@@ -1,0 +1,60 @@
+(/home/lidavidm/context/tex/texmf-context/tex/context/base/cont-yes.mkiv
+
+ConTeXt  ver: 2014.01.03 00:40 MKIV current  fmt: 2014.1.5  int: english/english
+
+system          > 'cont-new.mkiv' loaded
+(/home/lidavidm/context/tex/texmf-context/tex/context/base/cont-new.mkiv)
+system          > files > jobname 'hsr_intro_progress.', input './hsr_intro_progress.', result 'hsr_intro_progress.'
+fonts           > latin modern fonts are not preloaded
+languages       > language 'en' is active
+! I can't find file `./hsr_intro_progress.'.
+l.4 }
+   
+<inserted text> ...lvers.*" }    end    context.finishjob()}
+                                                  
+\luat_start_lua_code_indeed ...nd \directlua {#1}}
+                                                  
+l.91 \stopluacode
+               
+Please type another input file name: 
+(hsr_intro_progress.tex
+! Interruption.
+
+system          > tex > error on line 1 in file hsr_intro_progress.tex: Interruption ...
+
+ 1 >>  \environment env_simple
+ 2     \starttext
+ 3     \title{Introduction}
+ 4     
+ 5     \indenting[no] David Li \indenting[yes]
+ 6     
+ 7     \input bibliography
+ 8     \input board_introduction
+ 9     
+10     \placebibliography{summary.bib}
+11     \stoptext
+
+l.1 \environment
+               env_simple
+? 
+! Emergency stop.
+
+system          > tex > error on line 1 in file hsr_intro_progress.tex: Emergency stop ...
+
+ 1 >>  \environment env_simple
+ 2     \starttext
+ 3     \title{Introduction}
+ 4     
+ 5     \indenting[no] David Li \indenting[yes]
+ 6     
+ 7     \input bibliography
+ 8     \input board_introduction
+ 9     
+10     \placebibliography{summary.bib}
+11     \stoptext
+
+l.1 \environment
+               env_simple
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!

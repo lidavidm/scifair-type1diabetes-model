@@ -1,0 +1,277 @@
+% Page
+
+\setuppapersize[letter]
+\setuplayout[width=6.5in,height=10in,topspace=0.5in,backspace=1in,
+  header=0.5in,footer=0.5in,bottomspace=0.5in]
+
+% Typography
+
+\definefontfamily[mainface][serif][TeX Gyre Pagella]
+\definefontfamily[mainface][math][TeX Gyre Pagella Math]
+\definefontfamily[mainface][mono][Consolas][scale=0.9,features=none]
+
+\setupbodyfont[mainface,12pt]
+\setupinterlinespace[1.3em]
+
+\setupindenting[next]
+\setupitemgroup[itemize][indentnext=no]
+\indenting[yes, 0.5in]
+
+\setuphead[title][style=\bfa,after={},alternative=middle]
+
+\setupitemgroup[itemize][joinedup,nomargin]
+
+\setupcombinedlist[content][alternative=c,]
+
+\def\cite#1{[#1]}
+
+\starttext
+
+\indenting[no]
+\title{Enhancing Theoretical Understanding of the Onset of Type 1 Diabetes}
+David Li
+
+\startalignment[middle]
+
+  Abstract
+
+  \blank[line]
+
+  This is my abstract.
+
+\stopalignment
+
+\placecontent
+
+\indenting[yes]
+
+\startsection[title=Introduction]
+  In type 1 diabetes, also known as autoimmune diabetes, the body’s own immune
+  system attacks and destroys insulin-producing pancreatic beta cells, leading
+  to an insulin shortage and causing symptoms \cite{PubMed2013}. Currently,
+  the causes and cures are largely unknown \cite{Daneman2006}. However,
+  previous experiments have shown that in NOD (non-obese diabetic) mice, a
+  standard model for diabetic research, the level of T cells (a specific type
+  of immune cell) fluctuates cyclically in the weeks leading up to the
+  appearance of symptoms [\cite{Trudeau2003} cited in \cite{Mahaffy2007}]. To
+  better understand the mechanism underlying these oscillations, Mahaffy and
+  Edelstein-Keshet constructed a mathematical model of the immune–pancreas
+  system. One parameter in the model is the level of pancreatic beta cells,
+  which slowly decreases over time as the disease progresses; at a certain
+  level, the fluctuations described experimentally appear \cite{Mahaffy2007}.
+
+
+  \setupcaptions[location=right,width=7cm]
+  \placefigure[here,nonumber]{Left: from \cite{Mahaffy2007}; experimental
+    measurement of T cell levels in NOD mice over time, with diabetes
+    occurring after \quotation{spikes}. Right: example of a Hopf bifurcation.}{\startcombination[2*1]
+    {\externalfigure[experiment][height=8cm]}{}
+    {\externalfigure[bifurcation][height=8cm]}{}
+  \stopcombination}
+
+
+  Originally, the researchers analyzed the model’s behavior at various
+  constant parameter values \cite{Mahaffy2007}; in particular, they searched
+  for {\em bifurcations}, or qualitative changes in behavior that occur when a
+  parameter reaches a certain threshold \cite{VanVoorn2006}. For instance, a
+  system may remain constant at one parameter value; if the parameter reaches
+  a certain level, the system may then oscillate between two defined values
+  (see diagram) \cite{VanVoorn2006}. This experiment will improve the model by
+  applying research demonstrating that in certain systems, slowly varying the
+  parameter value while the model runs can change the qualitative nature of
+  the system \cite{Baer1989}. This more accurately reflects what occurs
+  biologically, as the original paper explicitly stated that the parameter
+  should continuously slowly fall. To summarize: for the original {\em static}
+  analysis, the authors re-ran the model multiple times, each time setting the
+  parameter to a fixed value. For the {\em continuous} analysis here, the
+  parameter starts at a given value and then continuously decreases over
+  time. Thus, this experiment will help scientists and medical professionals
+  better understand and apply the theoretical results of Mahaffy and
+  Edelstein-Keshet’s work as well as the experimental results they cited in
+  predicting and understanding the onset of type 1 diabetes and the behavior
+  of the immune system in this disease.
+\stopsection
+
+\startsection[title={Question \& Hypothesis}]
+  How does treating the level of beta cells as a {\em continuously} varying
+  slow parameter affect the qualitative behavior of the scaled reduced
+  immune model developed by Mahaffy and Edelstein-Keshet, and how can those
+  findings be applied to understanding and predicting the onset of type 1
+  diabetes?
+
+  If the model for the level of immune cells in the weeks before the onset
+  of type 1 diabetes is analyzed with both a continuously varying and a
+  static peptide clearance rate $δₚ$, then in the former analysis, the
+  oscillations present in the original model will begin at a later time
+  because research has shown this behavior is delayed in other models when
+  analyzed with a continuously varying parameter.
+
+\stopsection
+
+\startsection[title={Experimental Materials}]
+  \startitemize[1,joinedup]
+
+    \startitem Computer (x86-64 architecture running a Linux distribution)
+
+      \indenting[no] The exact specifications and the operating system do not
+      matter, as the software used runs on all platforms. A relatively recent
+      (past 5 years or so) computer will suffice.
+    \stopitem
+
+    \startitem Computer Software
+      \startitemize[1,joinedup]
+      \item Python 3.3.3 with {\tt mpmath}
+        (\hyphenatedurl{http://www.python.org},
+        \hyphenatedurl{http://www.mpmath.org}), used to calculate the data for
+        the plots.
+      \item XPP AUTO 7.0 (http://www.math.pitt.edu/\textasciitilde
+        bard/xpp/xpp.html), used to calculate the data for the bifurcation
+        diagrams.
+      \item \CONTEXT \ 2014.01.03 (http://wiki.contextgarden.net), used to
+        generate the plots and bifurcation diagrams.
+      \item Gnuplot 4.6.4 (http://www.gnuplot.info), used to generate
+        plots.
+      \stopitemize
+    \stopitem
+
+    \startitem Project Source Code
+
+      \indenting[no]
+      The source code for this project can be downloaded or checked out via
+      {\tt git} from this URL:
+
+      \startalignment[middle]
+        http://www.bitbucket.org/lidavidm/scifair-t1d-model
+      \stopalignment
+    \stopitem
+  \stopitemize
+
+  For reference, here are the version numbers of the software programs as
+  reported themselves:
+  \starttyping
+% python --version
+Python 3.3.3
+% ./xppaut -version
+XPPAUT Version 7.0
+% python -c "import mpmath; print(mpmath.__version__)"
+0.17
+% gnuplot --version
+gnuplot 4.6 patchlevel 4
+% context --version
+mtx-context     | ConTeXt Process Management 0.60…
+mtx-context     | current version: 2014.01.03 00:40
+  \stoptyping
+\stopsection
+
+\startsection[title={Experimental Procedures}]
+
+  XPP AUTO, used in the original paper, is used to compute a bifurcation
+  diagram:
+
+  %\showplot{bifurcation_xpp_simple}
+
+  This shows, at a particular level of beta cells, possible states of the
+  model (i.e.\ level of T cells). The higher the T cell level, the more beta
+  cells can be destroyed. On a steady state, the system remains at a fixed
+  level of T cells; in contrast, the level oscillates on a periodic state. If
+  a state is steady, then introducing a small deviation will result in the
+  system returning to the original state, while an unstable state will move
+  towards another state. The points labeled \quotation{HB} are {\em Hopf
+    bifurcations}, points at which the system changes qualitative
+  behavior—from stable to periodic or vice-versa.
+
+  Now, for the {\em continuous} analysis, the model starts at a particular
+  $a_{15}$ (= 1/beta cell) level, which varies linearly over time. Because
+  this variation is linear, at each time the $a_{15}$ level is unique, and
+  thus the $A$ vs $t$ plot of this model can be overlaid on the bifurcation
+  diagram as a $A$ vs $a_{15}$ plot, allowing them to be compared (see the
+  diagrams below).
+
+  The model equations are
+  \startformula\startalign \frac{dA}{dt} \NC = \NC(a₆+a₇M)f₁(p) - a₈A - a₉A²
+    \;\;\;\;\; \frac{dM}{dt} = a_{10}f₂(p)A-f₁(p)a₇a_{16}M - a_{11}M \NR
+    \frac{dE}{dt} \NC = \NC a_{12}(1-f₂(p))A-a_{13}E \;\;\;\;\; p =
+    \frac{a_{14}}{a_{15}}EB \;\;\;\;\; f₁ =
+    \frac{p^{a_1}}{{a_2}^{a_1}+p^{a_1}} \;\;\;\;\; f₂ =
+    \frac{{a_4}{a_5}^{a_3}}{{a_5}^{a_3}+p^{a_3}}\NR
+  \stopalign \stopformula
+  with $ a_{15} = δₚ = \mfunction{constant} $ for the bifurcation diagram or $
+  \dfrac{da_{15}}{dt} = \dfrac{dδₚ}{dt} = \mfunction{rate~of~change} $ for the
+  continuous analysis. Here, $A$ is the level of activated T cells, $B$
+  pancreatic beta cells, $E$ effector T cells, $M$ memory T cells, and $p$
+  peptide level. In the model, beta cells that undergo apoptosis (cell death)
+  generate peptide; then, T cells become activated, \quotation{recognizing}
+  this peptide. These then become either effector cells, which destroy
+  pancreatic cells and produce more peptide, or memory cells that encounter
+  the peptide and trigger an immune response.
+
+  A 4th order Runge-Kutta solver is used to solve the continuous
+  system. Runge-Kutta is a standard algorithm for solving differential
+  equations \cite{Gonsalves2009}, used here because the continuous analysis
+  could lead to numerical precision errors \cite{Baer1989}, and this
+  implementation allows for arbitrary-precision computations
+  \cite{Mpmath2013}.
+\stopsection
+
+\startsection[title={Results \& Discussion}]
+
+  To read the plots, note that each contains two graphs: the continuous
+  model, in orange, and the bifurcation diagram, in blue/green/red. The
+  latter shows, at a particular \math{\delta_p}, the level of T cells the
+  static model \quotation{settles into} over time. If multiple values are
+  shown for a particular \math{\delta_p}, then the system oscillates between
+  those values over time (and in this model, oscillations imply symptoms of
+  diabetes \cite{Mahaffy2007}). Meanwhile, the continuous model (orange)
+  shows T cell level vs.\ time; since \math{\delta_p} varies linearly with
+  time, each \math{\delta_p} corresponds to exactly one unique time
+  value. The arrow in the upper right indicates the direction of time.
+
+  In the original experiments with mice, the appearance of symptoms of
+  diabetes corresponded with cyclic fluctuations in the level of T cells
+  \cite{Trudeau2003}. Looking at the first plot, as the level of T cells
+  decreases over time in the continuous model, some oscillations appear
+  before the point they are expected to (the {\em Hopf bifurcation} point,
+  labeled \quotation{HB}). Given the large error bars in the original
+  experiments, however, such small oscillations may not be of note and may
+  explain why only a few oscillations were found in the mice. When the same
+  amount of beta cell destruction is spread out over a longer timeframe—1000
+  days rather than 200 (the experiments covered roughly 200 days)—the
+  oscillations occur far later than they should. Thus, theoretically, a way
+  to prevent beta cell destruction would only delay the onset of symptoms.
+
+\stopsection
+
+\startsection[title={Conclusion \& Future Research}]
+  The results both confirm and refute the hypothesis—depending on the
+  timescale, the oscillations that are indicative of the onset of diabetes
+  may start either earlier or later than expected. Taking into account the
+  error bars on the original data, the simulations here still show the
+  characteristic pattern of low T cell levels that then transition into
+  oscillatory \quotation{spiking}. Thus, this confirms the veracity of the
+  original model under a more biologically accurate continuous
+  analysis. Furthermore, the results suggest that 1) with sensitive enough
+  tests, the oscillations characteristic of the disease may be detectable
+  earlier than expected, and that 2) slowing the rate of beta cell
+  destruction may delay, but not prevent, those oscillations. Therefore,
+  researchers interested in completely preventing this disease may want to
+  investigate other variables of the model.
+
+  In this analysis, the level of beta cells varies linearly, but in reality,
+  beta cells regenerate. Thus, extending the system with a model of beta
+  cell regeneration would make it more biologically accurate. For instance,
+  models of type 2 diabetes often account for this and could serve as a
+  starting point for research [Dr.\ Jiaxu Li, University of Louisville,
+    personal communication, December 6, 2013]. Additionally, conducting
+  further experiments in mice to obtain more data on the oscillations would
+  help fine-tuning the model; note both the large error bars in the original
+  data (see introduction) and the parameter sensitivity of this model
+  \cite{Mahaffy2007}.
+\stopsection
+
+\startsection[title={References}]
+\stopsection
+
+\startsection[title={Acknowledgments}]
+\stopsection
+
+\stoptext

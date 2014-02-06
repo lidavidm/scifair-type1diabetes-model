@@ -1,0 +1,122 @@
+\definepapersize[board][width=48in,height=32in]
+\setuppapersize[board][board]
+\setuplayout[width=47.5in,height=31.2in,topspace=0.3in,backspace=0.5in,header=0in,footer=0in,bottomspace=0.5in]
+\setuppagenumbering[state=stop]
+\definebodyfontenvironment
+  [default][b=2,c=2,d=3.8]
+
+\definefontfamily[mainface][serif][TeX Gyre Pagella]
+\definefontfamily[mainface][math][TeX Gyre Pagella Math]
+\definefontfamily[mainface][mono][Consolas][scale=0.9]
+\setupbodyfont[mainface,26pt]
+\definefontfeature[smallcapitals][smcp=yes,kern=yes]
+\definefontfamily[titleface][serif][Crimson][features=smallcapitals]
+\setupalign[tolerant]
+
+\input bibliography
+
+\setupinterlinespace[1.3em]
+
+\definelayer[title][x=0in,y=0in, width=\paperwidth, height=2in]
+\definelayer[introduction][x=0.5in,y=3in, width=14in, height=32in]
+\definelayer[procedures][x=16.5in,y=3in, width=14in, height=2in]
+\definelayer[discussion][x=32.5in,y=3in, width=14in, height=2in]
+\definelayer[workscited][x=32.5in,y=22.5in, width=14in, height=2in]
+
+% https://kuler.adobe.com/TYPOGRAPHIC-CONTRAST-color-theme-3201506/
+\definecolor[background][r=0.17,g=0.25,b=0.36]
+\definecolor[foreground][r=1,g=1,b=1]
+\definecolor[highlight][r=1,g=0.95,b=0.75]
+
+\startcolor[white]
+
+\input gnuplot_board
+\input plots
+\def\showplot#1{
+  \startcolor[black]
+    \switchtobodyfont[24pt]
+    \framed[background=color,backgroundcolor=white]{
+      \useGNUPLOTgraphic[#1]
+    }
+    \switchtobodyfont[26pt]
+  \stopcolor
+}
+
+\def\sectiontitle#1{\startalignment[middle]{\switchtobodyfont[titleface]\scc #1}\stopalignment
+  \blank[0.1in] \setupindenting[yes,next,0.5in]}
+
+\setupbackgrounds[page][background=color,backgroundcolor=background]
+\starttext
+
+\setupTABLE[row][first][align=middle]
+\setupTABLE[c][each][width=0.33\textwidth,offset=0.25in]
+\setupTABLE[c][1][loffset=0in]
+\setupTABLE[c][3][roffset=0in]
+\bTABLE
+
+  \bTABLEhead
+    \bTR \bTH[nc=3]
+      {\switchtobodyfont[titleface]\tfd Enhancing Theoretical Understanding of the Onset of Type 1 Diabetes}
+    \blank[0.1cm]
+      {\switchtobodyfont[titleface]\tfb\em David Li}
+    \blank[0.4cm]
+      {\switchtobodyfont[titleface]\tfb\em Basha High School, 5990 South Val Vista Dr., Chandler, AZ
+        85249}
+    \eTH \eTR
+  \eTABLEhead
+
+  \bTABLEbody
+    \bTR
+
+    \bTD
+      {
+        \bTABLE[width=15.16in]
+        \bTR[frame=on,frame=off]
+        \bTD[frame=on,framecolor=white,offset=0.25in]
+          \sectiontitle{Introduction}
+
+          \setupindenting[yes,next,0.5in]
+          \input board_introduction
+
+        \eTD
+        \eTR
+        \bTR
+        \bTD[framecolor=white,offset=0.25in]
+          \sectiontitle{Introduction}
+
+          \setupindenting[yes,next,0.5in]
+          \setupinterlinespace[1.2em]
+
+          Test
+        \eTD
+        \eTR
+        \eTABLE
+      }
+    \eTD
+    \bTD
+      {
+          \sectiontitle{Introduction}
+
+          \setupindenting[yes,next,0.5in]
+          \setupinterlinespace[1.2em]
+
+          Test
+      }
+    \eTD
+    \bTD
+      {
+          \sectiontitle{Introduction}
+
+          \setupindenting[yes,next,0.5in]
+          \setupinterlinespace[1.2em]
+
+          Test
+      }
+    \eTD
+
+    \eTR
+  \eTABLEbody
+
+\eTABLE
+
+\stoptext

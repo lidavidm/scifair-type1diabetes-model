@@ -1,0 +1,50 @@
+\setupindenting[yes,next,0.5in]
+
+In type 1 diabetes, also known as autoimmune diabetes, the body’s own immune
+system attacks and destroys insulin-producing pancreatic beta cells, leading
+to an insulin shortage and causing symptoms \cite{PubMed2013}. Currently,
+the causes and cures are largely unknown \cite{Daneman2006}. However,
+previous experiments have shown that in NOD (non-obese diabetic) mice, a
+standard model for diabetic research, the level of T cells (a specific type
+of immune cell) fluctuates cyclically in the weeks leading up to the
+appearance of symptoms, as depicted in the graph (below left): after the
+\quotation{spikes} occur (black), the percentage of diabetic mice increases
+dramatically (in gray) [\cite{Trudeau2003} cited in \cite{Mahaffy2007}]. To
+better understand the mechanism underlying these oscillations, Mahaffy and
+Edelstein-Keshet constructed a mathematical model of the immune–pancreas
+system. One parameter in the model is the level of pancreatic beta cells,
+which slowly decreases over time; at a certain level, the fluctuations
+described experimentally occur, and then diabetes appears
+\cite{Mahaffy2007}.
+
+
+\setupcaptions[location=bottom,width=10in]
+\placefigure[here,nonumber]{\switchtobodyfont[20pt]Left: from \cite{Mahaffy2007}; experimental
+  measurement of T cell levels (black) in NOD mice over time, with diabetes
+  occurring after \quotation{spikes} (percentage of mice that are diabetic
+  in gray). Right: example of a Hopf bifurcation.}{\startcombination[2*1]
+  {\externalfigure[experiment][height=8cm]}{}
+  {\externalfigure[bifurcation][height=8cm]}{}
+\stopcombination}
+
+
+Originally, the researchers analyzed the model’s behavior at various
+constant parameter values \cite{Mahaffy2007}; in particular, they searched
+for {\em bifurcations}, or qualitative changes in behavior that occur when a
+parameter reaches a certain threshold \cite{VanVoorn2006}. For instance, a
+system may remain constant at one parameter value; if the parameter reaches
+a certain level, the system may then oscillate between two defined values
+(see diagram) \cite{VanVoorn2006}. This experiment will improve the model by
+applying research demonstrating that in certain systems, slowly varying the
+parameter value while the model runs can change the qualitative nature of
+the system \cite{Baer1989}. This more accurately reflects what occurs
+biologically, as the original paper explicitly stated that the parameter
+should continuously slowly fall. To summarize: for the original {\em static}
+analysis, the authors re-ran the model multiple times, each time setting the
+parameter to a fixed value. For the {\em continuous} analysis here, the
+parameter starts at a given value and then continuously decreases over
+time. Thus, this experiment will help scientists and medical professionals
+better understand and apply the theoretical results of Mahaffy and
+Edelstein-Keshet’s work as well as the experimental results they cited in
+predicting and understanding the onset of type 1 diabetes and the behavior
+of the immune system in this disease.

@@ -1,0 +1,372 @@
+\environment env_essay
+\usemodule[tabl-nte]
+\input bibliography
+\setmonofont[Consolas][scale=0.9]
+\indenting[no]
+\setupitemgroup[itemize][indenting=no]
+\setupwhitespace[small]
+\def\mydots{\leavevmode\xleaders\hbox to 0.2em{\hfil.\hfil}\hfill\kern0pt}
+
+\setuphead[title][style=\tfb,after={},before={}]
+\setuphead[section][number=no,style=\tfa,before={\blank[0.2cm]},after={\blank[0.1cm]}]
+\setuphead[subsection][number=no,style=\tf\em,before={},after={}]
+\setuplabeltext[en][appendix=Appendix~]
+\definehead[appendix][chapter]
+\def\Appendix#1{Appendix #1.}
+\setuphead[appendix][before={}, after={}, page=no, numbercommand=\Appendix,style={\tfa}, number=yes,conversion={A}]
+
+\starttext
+
+\title{Proposed Procedures: Continuous Analysis of a Model for T Cells in
+  Autoimmune Diabetes}
+
+David Li
+
+\startsection[title={Materials}]
+
+  Estimated Total Cost\mydots \$0
+
+  \startitemize[n,joinedup]
+
+    \startitem Computer (x86-64 architecture running a Linux distribution; no
+      need to purchase)\mydots \$0
+
+      The exact specifications do not matter, nor should the operating
+      system, as the software used runs on all platforms. A relatively
+      recent (past 5 years or so) computer will absolutely suffice.
+    \stopitem
+
+    \startitem Computer Software\mydots \$0
+
+      \startitemize[1]
+      \item Python 3.3.2 with {\tt mpmath} (\hyphenatedurl{http://www.python.org},
+        \hyphenatedurl{http://www.mpmath.org}). This will be used to calculate the
+        data for the plots.
+      \item XPP AUTO 7.0 (http://www.math.pitt.edu/\textasciitilde
+        bard/xpp/xpp.html). This will be used to calculate the data for the
+        bifurcation diagrams.
+      \item \CONTEXT \ 2013.05.28
+        (http://wiki.contextgarden.net)\footnote{Inkscape may also be
+        required to be able to generate SVG diagrams.}. This will be used to
+        generate the plots and bifurcation diagrams (explained below).
+      \item Gnuplot 4.6.4 (http://www.gnuplot.info), also used to generate
+        plots.
+      \stopitemize
+
+    \stopitem
+
+  \stopitemize
+
+\stopsection
+
+\startsection[title={High-Level Procedural Overview}]
+
+  \startsubsection[title={Background Details}]
+    {\em See the \about[app:dp] appendix on \at{page}[app:dp] for more
+      details.}
+
+    This experiment centers on the bifurcation analysis of the model
+    designed by Mahaffy and Keshet as described at \cite{Mahaffy2007}.
+    Their model describes the level of T cells reactive to a peptide found
+    on pancreatic beta cells. These immune system cells destroy the
+    insulin-producing cells, leading to type 1 diabetes. The level of T
+    cells in the weeks before the onset of diabetes (the appearance of
+    symptoms) oscillates, as demonstrated by previous experiments
+    [\cite{Trudeau2003} cited in \cite{Mahaffy2007}]. One of the parameters
+    in the model\footnote{The original paper contains multiple variants of
+      the model; we are focusing on the {\em scaled reduced model} here.} is
+    the level of beta cells, which slowly decreases over time as the disease
+    progresses; after a certain point, symptoms begin to appear. The
+    original analysis centered on indirectly varying the level of beta cells
+    (via another parameter, the {\em peptide clearance rate} $δₚ$) to look
+    for {\em bifurcations}, or qualitative changes in the model’s
+    behavior. In particular, the authors considered the long-term behavior
+    of the model system at multiple constant values of the parameter
+    \cite{Mahaffy2007}.
+
+    This experiment applies the research of Dr.\ Baer, who found that when
+    such parameters are slowly and continuously varied, the qualitative
+    nature of the system differs from when the parameter is statically set
+    as described before \cite{Baer1989}. This change more accurately
+    reflects what actually occurs, as the original paper explicitly states
+    the parameter should continuously slowly fall\cite{Mahaffy2007}. Thus,
+    this experiment will help scientists and medical professionals better
+    understand and apply the theoretical results of Mahaffy and
+    Edelstein-Keshet’s work as well as the experimental results they cited.
+
+    To summarize: for the original {\em static} analysis, the authors re-ran
+    the model multiple times, each time setting the parameter to a fixed
+    value. For the {\em continuous} analysis conducted here, the parameter
+    starts at a given value and then continuously decreases over time.
+  \stopsubsection
+
+  \startsubsection[title={Procedural Overview}]
+    XPP AUTO, the same software used in the original experiment, is used to
+    compute the solution of
+
+    \startformula
+      p = \frac{a_{14}}{a_{15}}EB \;\;\;\;\;
+      f₁ = \frac{p^{a_1}}{{a_2}^{a_1}+p^{a_1}} \;\;\;\;\;
+      f₂ = \frac{{a_4}{a_5}^{a_3}}{{a_5}^{a_3}+p^{a_3}}
+    \stopformula
+    \startformula\startalign
+      \frac{dA}{dt} \NC = \NC(a₆+a₇M)f₁(p) - a₈A - a₉A² \NR
+      \frac{dM}{dt} \NC = \NC a_{10}f₂(p)A-f₁(p)a₇a_{16}M - a_{11}M \NR
+      \frac{dE}{dt} \NC = \NC a_{12}(1-f₂(p))A-a_{13}E \NR
+    \stopalign \stopformula
+
+    with
+    $ a_{15} = δₚ = \mfunction{constant} $
+    for the static analysis or
+    $ \dfrac{da₁₅}{dt} = \dfrac{dδₚ}{dt} = \mfunction{rate~of~change} $
+    for the continuous analysis\footnote{The rate of change depends on the
+      parameter range in consideration (see the appendix).}. Here, $A$
+    represents the level of activated T cells, $B$ the level of pancreatic
+    beta cells, $E$ the effector T cells, $M$ the memory T cells, and $p$
+    the peptide level. (The fluctuation of activated T cells matters the
+    most for the onset of diabetes.) In the model, pancreatic beta cells
+    that undergo apoptosis (cell death) generate peptide; in lymph nodes, T
+    cells become activated and \quotation{recognize} this particular
+    peptide. These cells then become either effector cells, which destroy
+    more pancreatic cells, thus producing more peptide, or memory cells,
+    which encounter the peptide and trigger an immune response.
+
+    Because $B$ and $δₚ$ are constant, an increase in the latter is
+    equivalent to a decrease in the former (and vice-versa), so the latter
+    was increased in Mahaffy’s analysis, which is equivalent to a decrease
+    in beta cell levels \cite{Mahaffy2007}.  Additionally, a 4\high{th}
+    order Runge-Kutta ODE solver written in Python is also used to compute
+    the numerical solution in the second case. Runge-Kutta is a standard
+    algorithm for solving ODEs; it is used here because Dr.\ Baer’s work
+    noted that the continuous analysis could lead to numerical precision
+    errors, and the Python implementation allows for arbitrary-precision
+    computations \cite{Baer1989}\cite{Mpmath2013}\cite{Gonsalves2009}.
+
+    After simulation, the experiment will result in a set of bifurcation
+    diagrams much like this one\footnote{These diagrams were generated by
+      beta runs of the eventual experimental software.}:
+
+    \input experiment/gnuplot
+    \input experiment/plots
+
+    \midaligned{
+      \useGNUPLOTgraphic[bifurcation_xpp]
+    }
+
+    as well as model-over-time diagrams such as this one:
+
+    \midaligned{
+      \useGNUPLOTgraphic[time_xpp_12]
+    }
+
+    The bifurcation diagram shows the {\em maximum and minimum values of $A$
+      over time for a trial run of the model with the particular parameter
+      level indicated on the x-axis}. Thus, it shows at what {\em static}
+    parameter levels diabetes can occur. For this experiment, a third
+    diagram will be generated overlaying the model-over-time diagram for the
+    {\em continuous} system onto the bifurcation diagram:
+
+    \midaligned{
+      \useGNUPLOTgraphic[bifurcation_combined_12]
+    }
+
+    Since the parameter will continuously and linearly vary over time, a
+    correspondence between the points of the two graphs exists (i.e.\ for
+    the model-vs-time graph, at a certain time, the parameter will be at a
+    unique particular value in the X-range of the bifurcation diagram), and
+    therefore the two modes of simulation can be compared – the goal of this
+    experiment. (See the appendix for the implementation details of
+    processing the data and generating the diagrams.)
+
+    Additionally, this experiment will compare the static bifurcation
+    diagrams of various other parameters when $δₚ$ is analyzed statically
+    and continuously, in order to find out how these parameters interact
+    with the continuous model versus the static model. $a_9 = ε$ controls
+    the competition between T cells, and $a_5 = k₂$ represents the level of
+    peptide at which $f₂$, the maximum number of activated T cells, is at
+    half its maximum level.
+
+  \stopsubsection
+
+\stopsection
+
+\page
+\startappendix[title={Detailed Procedures}, reference=app:dp]
+
+  {\em Note: familiarity with the Linux command line is assumed.}
+
+\startitemize[n,joinedup]
+\item Download the necessary experiment software and experiment files
+  (location TBD).
+\item Extract the experiment files to a directory.
+\item Open a shell and {\tt cd} to the directory containing the experiment
+  files.
+\startitem To generate plots of the system over time:
+  \startitemize[a]
+  \item Run {\tt python3 rk4_ode.py} to generate the data via the Runge-Kutta
+    method.
+  \item Run {\tt ./time_diagrams_xppaut.sh} to generate the data via XPP
+    AUTO.
+  \item Run {\tt context time_diagrams.tex} to generate a PDF containing the
+    plots.
+  \stopitemize
+\stopitem
+\startitem Then, to generate the plots of the system vs the bifurcation
+  parameters (the peptide clearance rate, $δₚ$; fraction of memory T cells
+  produced, $a$; T cell competition parameter $ε$, and peptide level for ½
+  max memory cells, $k₂$):
+  \startitemize[a]
+    \startitem[item:auto-steps] Run {\tt ../path_to_xpp/xppaut -runnow mk_static.ode} to
+      launch XPP AUTO. Bring up AUTO and save the points for the complete
+      bifurcation diagram in {\tt mk_static.dat}. If other parameters are to
+      be analyzed, also save the diagrams for those cases.
+
+      \startitemize[i]
+      \item Press {\tt f a} to bring up AUTO.
+      \item Press {\tt f l} and choose {\tt mk_static.ode.auto} to load the
+        parameters for the bifurcation diagram.
+      \item Press {\tt r s} to generate the diagram.
+      \item Press {\tt g}, {\tt <TAB>} over to the bifurcation point
+        (labeled {\tt HB} on the bottom), press {\tt <ENTER>} to select it,
+        and then {\tt rp} to generate the branch.
+      \item Repeat for each bifurcation point.
+      \item Press {\tt f a} and save the points in {\tt mk_static.dat}.
+      \item Close XPP AUTO ({\tt Control-C} the program in the terminal).
+      \stopitemize
+    \stopitem
+  \item Repeat \in{step}[item:auto-steps] for {\tt mk_static_epsilon.ode}
+    with {\tt mk_epsilon.ode.auto} and {\tt mk_static_k2.ode} with {\tt
+      mk_k2.ode.auto}, and then for {\tt mk_continuous_epsilon.ode} and {\tt
+      mk_continuous_k2.ode} with the corresponding {\tt .auto} files. Name
+    the result file after the parameter and {\tt .ode} file (e.g. {\tt
+      mk_continuous_epsilon.dat}, {\tt mk_static_k2.dat}).
+  \item Run {\tt python3 bifurcation_diagrams.py} to process the plot data.
+  \item Run {\tt context bifurcation_diagrams.tex} to generate a PDF
+    containing the plots.
+  \stopitemize
+\stopitem
+\stopitemize
+
+\startsubsection[title={Parameters for XPP AUTO and Python}]
+  The parameters in the following table are {\em not} parameters for the
+  model, but rather for the programs used to generate the model data. All
+  parameters not listed were left at default values.
+
+  For the parameter $δₚ$:
+  \startTABLE
+    \setupTABLE[r][first][style=bold]
+    \setupTABLE[c][1][width=.7\textwidth]
+    \setupTABLE[c][2][width=.3\textwidth]
+    \bTABLEhead
+    \NC Parameter \NC Value \NC\NR
+    \eTABLEhead
+
+    \bTABLEbody
+    \NC Integration time (the time the system will be run for) \NC 200 days \NC\NR
+    \NC Integration step (RK4, both Python and XPP AUTO) \NC 0.05 days \NC\NR
+    \NC {\tt mpmath} Decimal Precision ({\tt mpmath.mp.dps}) \NC 200 \NC\NR
+    \NC AUTO Par 1 \NC {\tt a15} \NC\NR
+    \NC AUTO Hi-Lo Y-axis \NC {\tt A} \NC\NR
+    \NC AUTO Hi-Lo Main Parameter \NC {\tt a15} \NC\NR
+    \NC AUTO Hi-Lo ranges \NC X: $\left[0, 18 \right]$ Y: $\left[0, 3\right]$ \NC\NR
+    \NC AUTO Par Max \NC 18 \NC\NR
+    \eTABLEbody
+
+  \stopTABLE
+
+  For the parameter $ε$ (assume other parameters are the same as before):
+  \startTABLE
+    \setupTABLE[c][1][width=.7\textwidth]
+    \setupTABLE[c][2][width=.3\textwidth]
+
+    \bTABLEbody
+    \NC AUTO Par 1 \NC {\tt a9} \NC\NR
+    \NC AUTO Hi-Lo Main Parameter \NC {\tt a9} \NC\NR
+    \NC AUTO Hi-Lo ranges \NC X: $\left[0, 5 \right]$ Y: $\left[0, 3\right]$ \NC\NR
+    \NC AUTO Par Max \NC 5 \NC\NR
+    \NC AUTO Ds \NC -0.02 \NC\NR
+    \eTABLEbody
+
+  \stopTABLE
+
+  For the parameter $k₂$ (assume other parameters are the same as before):
+  \startTABLE
+    \setupTABLE[c][1][width=.7\textwidth]
+    \setupTABLE[c][2][width=.3\textwidth]
+
+    \bTABLEbody
+    \NC AUTO Par 1 \NC {\tt a5} \NC\NR
+    \NC AUTO Hi-Lo Main Parameter \NC {\tt a5} \NC\NR
+    \NC AUTO Hi-Lo ranges \NC X: $\left[0, 2.5 \right]$ Y: $\left[0, 3\right]$ \NC\NR
+    \NC AUTO Par Max \NC 2 \NC\NR
+    \NC AUTO Ds \NC -0.02 \NC\NR
+    \eTABLEbody
+
+  \stopTABLE
+\stopsubsection
+
+\startsubsection[title={Initial Conditions}]
+For the model when processed over time:
+\startformula
+A = 0.5 \;\;\;\;\;
+M = 0 \;\;\;\;\;
+E = 1 \;\;\;\;\;
+B = 1 \;\;\;\;\;
+a_{15} = \mfunction{See~below}
+\stopformula
+
+For the model when generating bifurcation diagrams for the parameter
+$a_{15}$:
+
+\startformula
+A = 0.01961524 \;\;\;\;\;
+M = 2.802597\times10^{-45} \;\;\;\;\;
+E = 0.006538414 \;\;\;\;\;
+B = 1 \;\;\;\;\;
+a_{15} = 0
+\stopformula
+\stopsubsection
+
+\startsubsection[title={Parameter Ranges}]
+  As the total time is 200 days, the parameter will be varied at a rate of $
+  (δ_{p_2} - δ_{p_1})/200$ per day. These ranges were chosen based on a
+  reading of Mahaffy’s paper \cite{Mahaffy2007}. Although the authors did
+  not call out explicit parameter ranges, the ranges here represent either
+  the domains of graphs given or are near bifurcation points they
+  noted. Also, they tended to include a parameter value of $0$, which has
+  been adjusted to $0.1$ here to avoid a division-by-zero error. XPP AUTO does
+  not return an error when this occurs, but Python does, so the adjustment
+  avoids conflicts and undocumented behaviors. This will not adversely
+  affect the impact of this experiment; because the original analysis used
+  static parameter values, the overall range of values does not matter as
+  long as it includes the range used in the continuous analysis to be done
+  here for comparison.
+
+  \bTABLE
+    \setupTABLE[r][first][style=bold]
+    \setupTABLE[c][1][width=.7\textwidth]
+    \setupTABLE[c][2][width=.3\textwidth]
+    \bTABLEhead
+    \bTR \bTD Parameter \eTD\bTD Ranges \eTD \eTR
+    \eTABLEhead
+
+    \bTABLEbody
+    \bTR \bTD $δₚ$, the peptide clearance rate \eTD       \bTD 0.5 to 2.3 \eTD \eTR
+    \bTR \bTD[nr=2] (continuous, others are static) \eTD  \bTD 0.1 to 2   \eTD \eTR
+    \bTR                                                  \bTD 2 to 0.1   \eTD \eTR
+    \bTR \bTD $ε$, the T cell competition parameter \eTD  \bTD 5 to 0     \eTD \eTR
+    \bTR \bTD $k₂$, the half-maximal peptide level \eTD   \bTD 2 to 0     \eTD \eTR
+    \eTABLEbody
+
+  \eTABLE
+\stopsubsection
+
+\stopappendix
+
+\startappendix[title={Bibliography}]
+
+\placebibliography{summary.bib}
+
+\stopappendix
+
+\stoptext

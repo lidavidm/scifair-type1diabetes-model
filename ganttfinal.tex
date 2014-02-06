@@ -1,0 +1,39 @@
+\usemodule[gantt][alternative=mp]
+\usemodule[simplefonts][size=12pt]
+\setmainfont[Crimson]
+\setuppapersize[letter,landscape][letter,landscape]
+\setuplayout[width=6.5in,height=10in,topspace=0.2in,backspace=0.25in,
+  header=0.25in,footer=0.25in,bottomspace=0.2in]
+\setuppagenumbering[location=]
+
+\starttext
+  \title{Gantt Chart for David Li}
+  \startgantt[xunitlength=3.5cm,style=\tf,titlestyle=\tf,drawledgerline=true]{18}{6}
+    \startganttitle
+      \titleelement{2014}{6}
+    \stopganttitle
+    \startganttitle
+      \titleelement{January}{3}
+      \titleelement{February}{3}
+    \stopganttitle
+    \startganttitle
+      \titleelement{13–19}{1}
+      \titleelement{20–26}{1}
+      \titleelement{27–Feb.\ 2}{1}
+      \titleelement{3–9}{1}
+      \titleelement{10–16}{1}
+      \titleelement{17–20}{1}
+    \stopganttitle
+    \ganttbar{Interpretation}{0}{1}
+    \ganttbar{\math{\mfunction{Re}(\lambda)} Analysis}{0}{2}
+    \ganttbar{WKB Analysis (if possible)}{1}{2}
+    \ganttbar{Poster}{0}{4}
+    \ganttbar{Report}{1}{4}
+    \ganttbar{Presentation}{2}{3}
+    \ganttbar{Peer Review}{5}{1}
+    \ganttmilestone[color=black]{\bf HISEF}{6}
+  \stopgantt
+\stoptext
+%%% Local Variables:
+%%% mode: context
+%%% End:

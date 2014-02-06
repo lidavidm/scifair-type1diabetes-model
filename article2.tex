@@ -1,0 +1,305 @@
+\usemodule[simplefonts][size=10pt]
+\setuppapersize[letter]
+\setuplayout[width=6.5in,height=10.5in,topspace=0.5in,backspace=1in,
+  header=0.5in,footer=0.5in,bottomspace=0.5in]
+\definefontfeature[default][default][mode=node, kern=yes, liga=yes, onum=yes, protrusion=quality,expansion=quality]
+\setuppagenumbering[state=off]
+\setupwhitespace[medium]
+\setuphead[title][style={\tfb}, after={}, before={}]
+\setmainfont[Calluna]
+\setmathfont[euler]
+\setupinterlinespace[3ex]
+\starttext
+
+\title{Numerical modeling of sea ice in the climate system (excerpts)}
+
+http://www.atmos.washington.edu/~bitz/Bitz_draftchapter.pdf
+
+1.2 Sea Ice Physics in Leading Climate Models
+
+State of the art climate models today treat the jumble of sea ice ﬂoes as a
+continuum. Thus sea ice is generally described in terms of a distribution of
+sea ice thicknesses at the subgridscale. The ice motion is also considered
+for a continuum, rather than for individual ﬂoes.  With this brief overview,
+a global-scale sea ice model can be conveniently developed from four
+governing equations.
+
+Four Governing Equations
+
+The best sea ice components in global climate models today explicitly
+compute the icethickness distribution (see Table 2). Among these models, the
+formulation of the sea ice model begins with the ITD equation. The ITD is a
+probability density function (pdf), usually written $g(h)$, that describes
+the probability that the ice cover in particular region has thickness $h$. A
+cruder alternative is to model the mean thickness of the pdf and the total
+ice concentration.  In a sea ice model, the ITD describes the pdf of a grid
+cell and thus it is sometimes called a subgrid-scale parameterization. A
+parameterization typically represents processes that are too small-scale or
+complex to be represented explicitly. For example, deformation is
+parameterized with a set of rules that select the portion of the ITD that
+will deform and then redistribute it within the ITD. In contrast, ice growth
+and melt alter the ITD in a way that is computed from ﬁrst principles. Hence
+the ITD actually includes both parameterized and explicit physics…
+
+There are two parts to deformation: a rate of opening (creating open water)
+and closing (closing open water and/or deforming and redistributing the
+ice), which depend on u, and a redistribution process (or ridging mode),
+which depends on $g(h)$. The opening and closing rates depend on the
+convergence and/or shear in the ice motion ﬁeld. It may not be obvious that
+shear would cause deformation. Imagine that the ice pack is composed of
+pieces with jagged edges. When shearing, the jagged edges can catch on one
+another and cause deformation, which converts kinetic energy into potential
+energy from piling up ice, or shearing can cause frictional loss of energy
+and no deformation. Thus the closing rates also depend on assumptions made
+about frictional losses, see e.g., (Flato and Hibler, 1992; Bitz et al.,
+2001).
+
+For the redistribution process, some portion of the ITD is identiﬁed as
+potentially able to “participate” in redistribution (see Fig. 1). A typical
+rule assumes only the thinnest 15\% of the ITD participates. If the open
+water fraction exceeds 15\%, then no redistribution takes place, and instead
+the open water closes under convergence and nothing happens under shear.
+This participation function is weighted according to its thickness, so that
+the thinnest ice is most likely to deform. Another rule is needed to
+redistribute the ice that ridges. Originally, Thorndike et al. (1975)
+proposed that ice that ridges would end-up ﬁve times thicker than its
+starting thickness. Other more complex redistribution schemes have been used
+since then (e.g., Hibler, 1980; Lipscomb et al., 2007).
+
+Ice growth or melt causes g(h) to shift along its x-axis, or thickness
+space. This process is illustrated in Fig. 2. The growth/melt rate depends
+on thickness, so $g(h)$ becomes distorted in the process.
+
+The second governing equation is conservation of momentum…Conservation of
+enthalpy $E$ (the energy required to melt sea ice) is the third governing
+equation…
+
+Climate model resolution is nearing the large ﬂoe-scale, where sea ice can
+no longer be considered a continuum. I expect some climate models will adopt
+non-continuum sea ice dynamics in the 5-10 yr timeframe to break the
+ﬂoe-scale resolution limit. In the next 5 years, I expect the major new
+physics to be added to sea ice models will be explicit melt ponds; better
+radiative transfer and snow morphology; and primitive salinity, ﬂuid
+transport, and biogeochemistry. The greatest computational increase could be
+to advect many new variables if it weren’t for schemes such as incremental
+remapping which can eﬃciently transport large numbers of sea ice state
+variables (Lipscomb and Hunke, 2004). Computational resources will not be
+the limiting factor to implementing these new features. Instead, expertise
+in sea ice and polar climate at the modeling centers and errors in the other
+climate model components will limit advances. Learning how sea ice models in
+today’s global climate models work is the ﬁrst step to meet this certain
+need.
+
+\title{Studying : Modeling}
+
+http://nsidc.org/cryosphere/seaice/study/modeling.html
+
+Sea ice models have a more specific focus than General Circulation Models
+(GCMs), which simulate the climate of the entire world. You may have read
+about GCMs in the newspaper or a science magazine. They are often used to
+investigate the effects of global warming caused by increasing carbon
+dioxide, including the studies used for the Intergovernmental Panel on
+Climate Change (IPCC) (visit the IPCC Web site). Until recently, sea ice has
+been included in a rudimentary manner in GCMs. Because GCMs have shown that
+the the polar regions are particularly sensitive to small changes in
+climate, newer GCMs have improved sea ice models considerably.
+
+Sea ice models provide valuable information on how sea ice evolves and how
+it will be affected by changing climate.
+
+Numerical sea ice models are primarily used to study the important processes
+involved in the evolution of sea ice and are used for long-term climate
+studies. However, models are also used to provide short-term operational
+forecasts (one to five days) for ocean vessels in sea ice-covered regions,
+as well as seasonal forecasts (one to three months) to aid in planning. The
+U.S. Navy, for example, runs an operational sea ice model, the Polar Ice
+Prediction System (PIPS), to provide short-term forecasts of Arctic sea ice
+(visit the PIPS Web site).
+
+The equations in a sea ice model describe the relevant dynamics and
+thermodynamics that influence the evolution of sea ice. The dynamics
+equations take into account winds, currents, and other forces that influence
+sea ice motion. The thermodynamics equations take into account air and ocean
+temperatures, albedo, and other forces that influence the growth and melt of
+sea ice.
+
+The evolution of sea ice is influenced by the ocean below and the atmosphere
+above. These influences are represented in models as boundary conditions, or
+conditions outside of the model, at the top and bottom of the sea
+ice. Boundary conditions are more specifically referred to as forcings,
+because they force the sea ice to change in a certain way, based on
+influences from the ocean and atmosphere. An example is that air
+temperatures above freezing cause the sea ice to melt, whereas air
+temperatures below freezing cause the sea ice to grow.
+
+The processes involved in sea ice evolution are too complex to be exactly
+described by mathematical equations within models. These equations are
+approximations that capture only the processes necessary for the model
+application. Models carry assumptions, and predictions from the models have
+inherent uncertainties. In theory, a more complex model provides a more
+realistic simulation. However, the accuracy of the model is limited
+internally by the model physics, and externally by the boundary conditions,
+or forcing. As computers become more powerful and sea ice models are
+improved, simulations from models will have fewer uncertainties.
+
+Sea ice models are often combined with ocean or atmospheric models. These
+are called coupled models, because rather than specifying the ocean or
+atmosphere as forcings, the sea ice, ocean, or atmosphere interact with each
+other and all the components evolve together. Coupled models can include sea
+ice and ocean, sea ice and atmosphere, or all three.
+
+How sea ice models work
+
+Numerical models represent sea ice in cells. A cell is the smallest discrete
+area that can be described by the model. Within each cell, there is no
+variability in space of any of the properties. This property of model cells
+is similar to an image captured by a digital camera, where each image pixel
+is only one color. Each cell has a finite area, for example, 10 square
+kilometers (3.9 square miles) and describes several dynamic and
+thermodynamic properties, such as thickness, temperature, and velocity. The
+entire group of cells is referred to as a domain. As the number of grid
+cells increases in a model domain, so does the spatial resolution. Having a
+large number of grid cells describes sea ice conditions on smaller
+scales--tens of kilometers, versus hundreds). However, the cost of storing
+and computing the model increases substantially.
+
+The properties of each grid cell change as the model is run forward in time,
+based on the model equations and boundary conditions.
+
+After a model is run, the output is essentially a set of relevant sea ice
+variables, such as concentration, extent, and thickness, over time at each
+grid cell. Model outputs can be evaluated using sea ice observations (such
+as satellites and buoys) to determine how accurate the model is.
+
+\title{Arctic ice melt sets stage for severe winters, scientists say}
+
+http://news.cornell.edu/stories/2012/06/arctic-ice-melt-sets-stage-cold-weather
+
+The dramatic melt-off of Arctic sea ice due to climate change is hitting
+closer to home than millions of Americans might think. That's because
+melting Arctic sea ice can trigger a domino effect leading to increased odds
+of severe winter weather outbreaks in the Northern Hemisphere's middle
+latitudes -- think the "Snowmageddon" storm that hamstrung Washington, D.C.,
+during February 2010.
+
+Cornell's Charles H. Greene, professor of earth and atmospheric sciences,
+and Bruce C. Monger, senior research associate in the same department,
+detail this phenomenon in a paper published in the June issue of the journal
+Oceanography.
+
+"Everyone thinks of Arctic climate change as this remote phenomenon that has
+little effect on our everyday lives," Greene said. "But what goes on in the
+Arctic remotely forces our weather patterns here."
+
+A warmer Earth increases the melting of sea ice during summer, exposing more
+dark ocean water to incoming sunlight. This causes increased absorption of
+solar radiation and excess summertime heating of the ocean -- further
+accelerating the ice melt. The excess heat is released to the atmosphere,
+especially during the autumn, decreasing the temperature and atmospheric
+pressure gradients between the Arctic and middle latitudes.
+
+A diminished latitudinal pressure gradient is linked to a weakening of the
+winds associated with the polar vortex and jet stream. Since the polar
+vortex normally retains the cold Arctic air masses up above the Arctic
+Circle, its weakening allows the cold air to invade lower latitudes.
+
+The recent observations present a new twist to the Arctic Oscillation (AO)
+-- a natural pattern of climate variability in the Northern
+Hemisphere. Before humans began warming the planet, the Arctic's climate
+system naturally oscillated between conditions favorable and those
+unfavorable for invasions of cold Arctic air.
+
+Greene says, "What's happening now is that we are changing the climate
+system, especially in the Arctic, and that's increasing the odds for the
+negative AO conditions that favor cold air invasions and severe winter
+weather outbreaks.
+
+"It's something to think about given our recent history," Greene
+continued. This past winter, an extended cold snap descended on central and
+eastern Europe in mid-January, with temperatures approaching -22 Fahrenheit
+and snowdrifts reaching rooftops. And, of course, there were the record
+snowstorms fresh in the memories of residents from several eastern
+U.S. cities, such as Washington, New York and Philadelphia, as well as many
+other parts of the Eastern Seaboard during the previous two years.
+
+But wait -- Greene and Monger's paper is being published just after one of
+the warmest winters in the eastern U.S. on record. How does that relate?
+
+"It's a great demonstration of the complexities of our climate system and
+how they influence our regional weather patterns," Greene said. In any
+particular region, many factors can have an influence, including the El
+Nino/La Nina cycle. This winter, La Nina in the Pacific shifted undulations
+in the jet stream so that while many parts of the Northern Hemisphere were
+hit by the severe winter weather patterns expected during a bout of negative
+AO conditions, much of the eastern United States basked in the warm tropical
+air that swung north with the jet stream.
+
+"It turns out that while the eastern U.S. missed out on the cold and snow
+this winter, and experienced record-breaking warmth during March, many other
+parts of the Northern Hemisphere were not so fortunate," Greene said. Europe
+and Alaska experienced record-breaking winter storms, and the global average
+temperature during March 2012 was cooler than any other March since 1999.
+
+"A lot of times people say, 'Wait a second, which is it going to be -- more
+snow or more warming?' Well, it depends on a lot of factors, and I guess
+this was a really good winter demonstrating that," Greene said. "What we can
+expect, however, is the Arctic wildcard stacking the deck in favor of more
+severe winter outbreaks in the future."
+
+\page
+
+\tfa
+\setupinterlinespace[3.15ex]
+
+\title{Summary}
+
+The three articles discuss the state of Arctic sea ice melting and
+modeling. Stanford’s article, while light on technical details, provides a
+high-level overview of the problem and its implications: melting Arctic ice,
+while not likely to raise sea levels (as the ice is floating in the ocean),
+will affect weather patterns within the United States. Because the lack of
+ice exposes more seawater, which stores and releases thermal energy, this
+affects the Arctic Oscillation, a weather pattern that controls the flow of
+cold Arctic air southward. However, the scientists in the article admit that
+even with modeling of Arctic ice, they cannot predict its effect on weather
+patterns too accurately due to the complex interactions between various
+systems, though the general qualitative effect is known.
+
+The NSIDC article gives a high-level overview of the computational models
+used to study the melting of ice. Generally, such models are integrated into
+more general GCMs (global climate models) rather than used standalone. The
+models take into account oceanic and atmospheric influences on the ice and
+use simplified physics to model how the ice melts and forms. Generally, the
+algorithm divides the ice into cells, the smallest discrete area that the
+model attempts to describe. Each cell has properties such as thickness and
+temperature; more cells leads to better accuracy but also more computational
+cost. Cells can range from 10 square kilometers on a side to hundreds on a
+side. Then, the model is run and modifies those properties over time. Again,
+the authors concede that such models make many assumptions and note that
+because ice, ocean, and atmosphere are interdependent, integrated models can
+make better predictions. Generally satellites, buoys, and other measurements
+are used to verify the model predictions, but such measurements are limited.
+
+The Washington article describes some of the lower-level mathematical
+concepts in such models. In particular, models use a probability density
+function that represents the likelihood that the ice in a region has a
+particular thickness. The author describes several potential improvements,
+particularly in integrating more of the relevant physics as well as improved
+algorithms that could potentially improve computational time. Such advances
+are candidates for research, though implementing such a model efficiently
+may not be feasible. Again, this author also notes the need for integration
+with other climate models in order to receive accurate predictions.
+
+As for research topics, some models that are simpler, and in particular, use
+differential equations directly are potential candidates for bifurcation
+analysis, particularly if the model has a parameter that can be changed over
+time (e.g.\ quantity of greenhouse gases in the atmosphere). The models
+described here are more numerical in nature and are too complicated for this
+analysis, but other models would be amenable to analysis. Varying such a
+parameter would amount to a crude integration with other climate models,
+which all articles note is a necessity for accurate simulation.
+
+%%% Local Variables:
+%%% mode: context
+%%% TeX-master: t
+%%% End:

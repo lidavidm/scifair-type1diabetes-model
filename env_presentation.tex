@@ -1,0 +1,101 @@
+\startenvironment env_presentation
+
+  % Page
+
+  \setuppapersize[S6][S6]
+  \setuppagenumbering[state=stop]
+  \setuplayout[width=500pt,height=400pt,topspace=25pt,backspace=50pt,
+    header=0pt,footer=0pt,bottomspace=25pt]
+
+  \definecolor[a][r=0,g=0,b=1]
+  \definecolor[b][r=0,g=0,b=0.05]
+
+  \startuniqueMPgraphic{LinearShade}
+    path p ;
+    p := unitsquare xscaled \overlaywidth yscaled \overlayheight ;
+    linear_shade(p,6,\MPcolor{a},\MPcolor{b}) ;
+    % fill unitsquare xyscaled (\overlaywidth, \overlayheight) withcolor \MPcolor{a};
+    % fill unitsquare xyscaled (0.1*\overlaywidth, \overlayheight) withcolor \MPcolor{b};
+  \stopuniqueMPgraphic
+
+  \defineoverlay[shaded][\useMPgraphic{LinearShade}]
+
+  \setupbackgrounds[page][background={shaded}]
+
+  % Typography
+
+  \usemodule[simplefonts][size=24pt]
+  \setupalign[right,nothyphenated]
+  \setuptolerance[verytolerant,stretch]
+
+  \setmainfont[Source Sans Pro][protrusion=pure,features=oldstyle]
+  \setsansfont[Source Sans Pro Light][features=oldstyle]
+  \setmathfont[Euler][scale=1.25]
+
+  \definesimplefont[extralight][Source Sans Pro Extra Light][size=48pt,features=oldstyle]
+  \definefontfeature[default][liga=yes,kern=yes,tlig=yes,trep=yes,mode=node,aalt=yes]
+
+  \setupitemize[1][inmargin,packed]
+  \startcolor[white]
+
+  %% Headers
+
+  \definehead[slide][section]
+  \setuphead[title][style={\extralight}, alternative=middle, before={\dontleavehmode\blank[2cm]}]
+  \setuphead[slide][style={\ssa}, before={\page[yes]}, number=no,after={}]
+
+
+\usemodule[librarian]
+\CreateField{url}
+\CreateField{accessyear}
+\CreateField{accessmonth}
+\CreateField{accessday}
+\CreateField{sitetitle}
+\def\cite#1{\Cite{#1}{bibliography}{\MakeReference}{??}}
+
+\def\typesetref#1{
+\ifcsname#1@entrytype\endcsname
+ \csname#1@entrytype\endcsname
+ \else
+ \errmessage{Unknown entry type: `#1'}%
+ \fi
+}
+\def\createtype#1{%
+ \expandafter\def\csname#1@entrytype\endcsname
+ }
+
+\def\bibspace{~}
+\def\makerefname{%
+ \ifnum\NameCount>1
+ \ifnum\NameCount=\tempcount\relax \bibspace\& \else \bibspace \& \fi
+ \fi
+ \AbbreviateFirstname
+ \Lastname, \Firstname
+ }
+\createtype{article}{\RetrieveField{title}. {\em \RetrieveField{journal}, \RetrieveField{volume}}.}
+
+\createtype{book}{{\em \RetrieveField{title}}. Retrieved from \RetrieveField{url}.}
+
+\createtype{website}{\RetrieveField{title}. {\em
+    \RetrieveField{sitetitle}}. Retrieved on \RetrieveField{accessmonth}
+  \RetrieveField{accessday}, \RetrieveField{accessyear} from
+  \RetrieveField{url}.}
+
+\def\MakeReference{\RetrieveFieldIn{entrytype}\temp%
+  \RetrieveFieldIn{namenumber}\tempcount%
+  \ifx\tempcount\empty%
+  \def\tempcount{0}%
+  \fi%
+  {\tfxx
+
+  \setupinterlinespace[2ex]%
+  \ReadName{\makerefname} (\RetrieveField{year}).  \typesetref\temp \par}%
+  \setupinterlinespace[3ex]%
+}
+
+
+\stopenvironment
+%%% Local Variables:
+%%% mode: context
+%%% TeX-master: t
+%%% End:

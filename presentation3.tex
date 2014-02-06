@@ -1,0 +1,164 @@
+\environment env_presentation_alt
+
+\starttext
+
+\title{Enhancing Theoretical Understanding of the Onset of Type 1 Diabetes}
+
+\blank[1cm]
+{\startalignment[center]
+
+  David Li
+
+  Dr.\ McKelvy
+
+  8 Jan 2014
+
+\stopalignment}
+
+\page
+
+\startslide[title={Research Question}]
+
+  How does treating the level of beta cells as a {\em continuously} varying
+  slow parameter affect the qualitative behavior of the scaled reduced
+  immune model developed by Mahaffy and Edelstein-Keshet \cite{Mahaffy2007},
+  and how can those findings be applied to understanding and predicting
+  type 1 diabetes?
+
+\stopslide
+
+\startslide[title={Hypothesis}]
+
+  If the model for the level of immune cells in the weeks before the onset
+  of type 1 diabetes is analyzed with both a continuously varying and a
+  static peptide clearance rate $δₚ$, then in the former analysis, the
+  oscillations present in the original model will begin at a later time
+  because research has shown this behavior is delayed in other models when
+  analyzed with a continuously varying parameter.
+
+\stopslide
+
+\startslide[title={Materials}]
+  \startitemize[1,nomargin]
+  \item Computer
+  \item Software:
+  \stopitemize
+  \setuptyping[before=,after=]
+
+  \switchtobodyfont[20pt]
+  \starttyping
+% python --version
+Python 3.3.3
+% ./xppaut -version
+XPPAUT Version 7.0
+% python -c "import mpmath; print(mpmath.__version__)"
+0.17
+% gnuplot --version
+gnuplot 4.6 patchlevel 4
+% context --version
+mtx-context     | ConTeXt Process Management 0.60…
+mtx-context     | current version: 2014.01.03 00:40
+\stoptyping
+\switchtobodyfont[24pt]
+\stopslide
+
+\startslide[title={Procedure}]
+\startitemize[n]
+\item Using AUTO, compute the data for the bifurcation diagram.
+\item For each parameter range:
+  \startitemize[a]
+  \item Run the model with AUTO
+  \item Run the model with Python
+  \stopitemize
+\item Plot everything
+\stopitemize
+\page
+\resetbg
+\startitemize[1]
+\item AUTO is a standard tool for bifurcation and ODE work in mathematical
+  modeling
+\item {\tt mpmath} is newer and not seen in the field; used to verify
+  results
+\item \CONTEXT{} and Gnuplot are for generating plots (\CONTEXT{} is a
+  cousin of \LATEX{}, standard typesetting tool in the sciences)
+\item Only two \quotation{trials}, but the experiment is
+  deterministic—repetition unnecessary
+\item Control group is the bifurcation diagram; comparisons can also be made
+  to Mahaffy’s data and the original experiment
+\item Outside factors: round-off error (reason for Python)
+\stopitemize
+
+\stopslide
+
+\startslide[title={Data}]
+
+\input gnuplot_large
+\input experiment/plots
+
+\def\showplot#1{
+  \switchtobodyfont[18pt]
+  \startcolor[black]
+    \framed[background=color,backgroundcolor=white]{
+      \useGNUPLOTgraphic[#1]
+    }
+  \stopcolor
+  \switchtobodyfont[24pt,mainface]
+}
+
+\showplot{bifurcation_xpp}
+
+\page \resetbg
+
+\showplot{bifurcation_combined_12}
+Oscillations start {\em before} the bifurcation point, but don’t become
+noticeable until after
+
+\showplot{bifurcation_combined_12_long}
+On a less realistic time scale (1000 days vs 200), the oscillations start
+much later. If the beta cell decline can somehow be slowed…
+
+\showplot{bifurcation_combined_h2}
+Starting from a condition with few beta cells/a high clearance rate shows no
+oscillations. Biologically, the disease has already set in…trying to lower
+\math{\delta_p} doesn’t help
+
+\stopslide
+
+\startslide[title={Potential Impact}]
+\startitemize[1]
+\item Two interpretations: \math{\delta_p} vs \math{B} (equivalent effect)
+\item Sufficiently lowering \math{\delta_p} could delay the onset
+\item Increasing \math{B} or decreasing \math{\delta_p} too late does
+  nothing, of course
+\item Impact: speed of increase affects onset time; may contribute to
+  explanation of individual variance
+\item Applications: look for treatments that can manipulate these variables,
+  tests that can monitor them…
+\item Future work: address Mahaffy’s concerns with his model to make it more
+  accurate
+\item Having the original experimental data for comparison would be helpful
+\stopitemize
+\stopslide
+
+\startslide[title={Further Analysis}]
+\startitemize[1]
+\item Dr.\ Baer pointed me to the WKB method, used to determine exact point
+  at which oscillations begin in such studies
+\item Also suggested the idea of a \math{\mfunction{Re}(\lambda)} vs
+  \math{\delta_p} graph, another way to tell when oscillations begin
+  (contained in his paper)
+\item One issue with the latter…
+\stopitemize
+
+\page\resetbg
+\showplot{eigenvalues} \math{\mfunction{Re}(\lambda)} never crosses the
+axis!
+\stopslide
+
+\BibFile{summary.bib}
+
+\stoptext
+%%% Local Variables:
+%%% mode: context
+%%% TeX-master: t
+%%% End:

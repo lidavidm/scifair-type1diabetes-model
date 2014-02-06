@@ -1,0 +1,9 @@
+http://math.clas.asu.edu/~lopez/pdf/PRE_PDL11.pdf
+
+Slow passage through resonance
+
+The setup is similar to the familiar slow passage through a Hopf
+bifurcation problem, where for slow variations of the control parameter,
+oscillations are delayed until the parameter has exceeded the critical value
+of the static-parameter problem by an amount that is the difference between
+the Hopf value and the initial value of the parameter

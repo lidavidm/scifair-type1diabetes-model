@@ -1,0 +1,40 @@
+\usemodule[gantt][alternative=mp]
+\usemodule[simplefonts][size=12pt]
+\setmainfont[Crimson]
+\setuppapersize[letter,landscape][letter,landscape]
+\setuplayout[width=6.5in,height=10in,topspace=0.2in,backspace=0.25in,
+  header=0.25in,footer=0.25in,bottomspace=0.2in]
+\setuppagenumbering[location=]
+
+\starttext
+  \title{Gantt Chart for David Li}
+  \startgantt[xunitlength=1cm,style=\tf,titlestyle=\tf,drawledgerline=true]{18}{21}
+    \startganttitle
+      \titleelement{2013}{13}
+      \titleelement{2014}{8}
+    \stopganttitle
+    \startganttitle
+      \titleelement{October}{5}
+      \titleelement{November}{4}
+      \titleelement{December}{4}
+      \titleelement{January}{5}
+      \titleelement{February}{3}
+    \stopganttitle
+    \ganttgroup{Research~}{0}{5}
+    \ganttbar{Model/Math Background}{0}{5}
+    \ganttbar{Qualified Scientist}{2}{3}
+    \ganttgroup{Design}{4}{3}
+    \ganttbar{Question \& Hypothesis}{4}{2}
+    \ganttbar{Materials \& Budget}{5}{2}
+    \ganttbar{Procedural Design}{5}{2}
+    \ganttgroup{Experimentation}{7}{6}
+    \ganttbar{Experiment \& Computation}{7}{4}
+    \ganttbar{Lab Book/Research Binder}{7}{6}
+    \ganttbar{Analysis}{7}{6}
+    \ganttgroup{Report \& Poster}{13}{8}
+    \ganttbar{Report}{13}{4}
+    \ganttbar{Poster \& Presentation}{15}{4}
+    \ganttbar{Peer Review}{19}{2}
+    \ganttmilestone[color=black]{\bf HISEF}{21}
+  \stopgantt
+\stoptext

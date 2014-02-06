@@ -1,0 +1,184 @@
+\environment env_presentation
+
+\starttext
+
+\title{Modeling of Arctic Ice}
+
+{\startalignment[center] \ssa\sc
+
+  David Li
+
+  Dr.\ McKelvy
+
+  21 Aug 2013
+
+\stopalignment}
+
+\startslide[title={Importance of the Field}]
+% 2 dash, 5 circle
+ \startitemize[2]
+ \item Weather patterns in NA and Europe
+ \item Interrelationships between ocean, atmosphere, Arctic systems
+ \item Meteorologists \& general public
+ \stopitemize
+
+\stopslide
+
+\page
+\title{Review of Literature}
+
+\startslide[title={\em History of Sea Ice in the Arctic}]
+ \cite{Polyak2010}
+ \startitemize[2]
+   \item Seasonal levels
+   \item Shrinking
+     \startitemize[5]
+     \item Warming
+     \item Extended summer melt season
+     \item Changing atmospheric patterns (clouds \& heating)
+     \stopitemize
+ \stopitemize
+\stopslide
+
+\startslide[title={\em An Arctic Wild Card in the Weather}]
+  % http://en.wikipedia.org/wiki/File:Photo_of_second_North_American_blizzard_in_South_Riding,_Virginia.jpg
+  \midaligned{\externalfigure[snowmageddon.jpg][height=300pt]}
+
+  \page
+
+ \cite{Greene2012}
+ \startitemize[2]
+   \item Arctic Oscillation
+   \item Exposed ocean absorbs heat—\quotation{ice-albedo feedback mechanism}
+   \item Heat released via evaporation…
+   \item Increased pressure, moisture = weakened polar vortex/jet stream
+   \item Polar vortex contains cold air
+   \item Jet stream controls persistence in middle latitudes
+ \stopitemize
+\stopslide
+
+\startslide[title={\em Bifurcations leading to summer Arctic sea ice loss}]
+ \cite{Abbot2011}
+ \startitemize[2]
+   \item Bifurcation = qualitative change in system
+   \item Mathematical model can’t make {\em specific} predictions…
+   \item No saddle node bifurcations found, but Hopf unstudied…
+ \stopitemize
+
+ \page
+ \dontleavehmode\blank[3cm]
+ \startformula\startalign
+   \NC \frac{dE}{dt} = \NC (1 - α(E))F_s(t) - A(E) - BT(E, t) \NR
+   \NC \NC  + ΔA_{ghg} + (-E\mathcal{vR}(-E)) \NR
+ \stopalign\stopformula
+\stopslide
+
+\startslide[title={\em The Slow Passage Through a Hopf Bifurcation}]
+ \cite{Baer1989}
+ \startitemize[2]
+ \item Slow passage = continuous parameter that \quotation{slowly} changes
+ \item Can lead to problems in computer calculations
+ \item Solution: more precision \& {\bf awareness} of this problem
+ \stopitemize
+
+ \page
+
+ % http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/LogisticMap_BifurcationDiagram.png/800px-LogisticMap_BifurcationDiagram.png
+ \midaligned{\externalfigure[bifurcationdiagram][height=300pt]}
+ \startformula
+   x_{n+1} = r \, x_n(1-x_n)
+ \stopformula
+
+ \page
+ \midaligned{\externalfigure[baerdiagram][height=300pt]}
+\stopslide
+
+\startslide[title={Current State of Knowledge}]
+ \startitemize[2]
+   \item Arctic ice melting = changing weather patterns…
+   \item …and the ice is melting
+   \item Already have had many severe winter storms
+   \item Models don’t predict a specific type of qualitative change in the
+     future
+ \stopitemize
+\stopslide
+
+\startslide[title={Shadow Area}]
+ \startitemize[2]
+ \item Jargon of two fields: climate modeling and bifurcation theory
+ \item Details of these weather systems
+ \item How to apply conclusions from a naïve model
+ \item Better understand the mathematics
+ \stopitemize
+\stopslide
+
+\startslide[title={Outstanding Questions}]
+ \startitemize[2]
+   \item Are other types of bifurcations possible?
+   \item Bifurcation generally means a sudden change
+   \item How accurate can we make these models?
+   \item How well do the models’ predictions relate to real weather?
+ \stopitemize
+\stopslide
+
+\startslide[title={Research Question}]
+{\ssa
+  How does the level of greenhouse gas as a slow parameter (one that
+  continuously varies at a slow rate) affect the behavior of an Arctic sea
+  ice model, and how can those conclusions be applied to a general climate
+  model?
+}
+\stopslide
+
+\startslide[title={Proposed Procedure}]
+ \startitemize[n]
+   \item Implement model
+   \item Run model with varying parameter
+   \item Generate diagrams
+   \item Analyze
+ \stopitemize
+
+ \page
+
+ \setupinterlinespace[2ex]
+ \setuptyping[style=\ttx,space=fixed]
+ \starttyping
+
+def runge_kutta(f, t0, y0, h, steps):
+    t = t0
+    y = y0
+    for n in range(steps):
+        k1 = f(t, y)
+        k2 = f(t + h / 2, y + k1 * (h / 2))
+        k3 = f(t + h / 2, y + k2 * (h / 2))
+        k4 = f(t + h, y + k3 * h)
+
+        t += h
+        y += (h / 6) * (k1 + 2 * k2 + 2 * k3 + k4)
+
+    return t, y
+
+\stoptyping
+ \setupinterlinespace[2.8ex]
+
+ \page
+
+ Materials needed:
+ \startitemize[2,nowhite]
+ \item Computer
+ \item Time
+ \stopitemize
+
+ Assistance: Dr.\ Baer, to help verify calculations
+\stopslide
+
+\page[yes]
+
+\BibFile{summary.bib}
+\ReadList{bibliography}
+
+\stoptext
+%%% Local Variables:
+%%% mode: context
+%%% TeX-master: t
+%%% End:

@@ -1,0 +1,68 @@
+\startenvironment env_presentation
+
+  % Page
+
+  \setuppapersize[S6][S6]
+  \setuppagenumbering[state=stop]
+  \setuplayout[width=500pt,height=400pt,topspace=25pt,backspace=50pt,
+    header=0pt,footer=0pt,bottomspace=25pt]
+
+  \definecolor[a][r=0,g=0,b=1]
+  \definecolor[b][r=0,g=0,b=0.05]
+
+  \startuniqueMPgraphic{LinearShade}
+    path p ;
+    p := unitsquare xscaled \overlaywidth yscaled \overlayheight ;
+    % linear_shade(p,6,\MPcolor{a},\MPcolor{b}) ;
+    fill unitsquare xyscaled (\overlaywidth, \overlayheight) withcolor \MPcolor{bgcolor};
+    fill unitsquare xyscaled (\overlaywidth, 0.12*\overlayheight) shifted (0, 0.88*\overlayheight) withcolor \MPcolor{bgcolorb};
+  \stopuniqueMPgraphic
+
+  \startuniqueMPgraphic{LinearShadeb}
+    path p ;
+    p := unitsquare xscaled \overlaywidth yscaled \overlayheight ;
+    % linear_shade(p,6,\MPcolor{a},\MPcolor{b}) ;
+    fill unitsquare xyscaled (\overlaywidth, \overlayheight) withcolor \MPcolor{bgcolor};
+    fill unitsquare xyscaled (\overlaywidth, 0.525*\overlayheight) shifted (0, 0.5*\overlayheight) withcolor \MPcolor{bgcolorb};
+  \stopuniqueMPgraphic
+
+  \defineoverlay[shaded][\useMPgraphic{LinearShade}]
+  \defineoverlay[shadedb][\useMPgraphic{LinearShadeb}]
+
+  %\setupbackgrounds[page][background={shaded}]
+  \definecolor[bgcolor][r=0.137,g=0.706,b=0]
+  \definecolor[bgcolorb][r=0.137,g=0.506,b=0]
+  \setupbackgrounds[page][background={shadedb}]
+  \def\resetbg{\setupbackgrounds[page][background=color,backgroundcolor=bgcolor]}
+
+  % Typography
+
+  \definefontfamily[mainface][serif][gentium]
+  \definefontfamily[mainface][sans][Source Sans Pro]
+  \definefontfamily[mainface][mono][Inconsolata]
+  \definefontfamily[mainface][math][TeX Gyre Pagella Math]
+  \definefontfamily[titleface][serif][Crimson]
+  \setupbodyfont[mainface,24pt]
+  \setupalign[right,nothyphenated]
+  \setuptolerance[verytolerant,stretch]
+
+  \definefontfeature[default][liga=yes,kern=yes,tlig=yes,trep=yes,mode=node,aalt=yes]
+
+  \setupitemize[1][inmargin,packed]
+  \startcolor[white]
+  \setupinterlinespace[1em]
+
+  %% Headers
+
+  \definehead[slide][section]
+  \setuphead[slide][page=yes,number=no,style=\scb,before={\switchtobodyfont[titleface]},after={\switchtobodyfont[mainface]\setupbackgrounds[page][background={shaded}]}]
+  \setuphead[title][style={\tfc},alternative=middle,before={\dontleavehmode\blank[2cm]\switchtobodyfont[titleface]},after={\switchtobodyfont[mainface]}]
+
+  %% Bibliography
+
+  \input bibliography
+\stopenvironment
+%%% Local Variables:
+%%% mode: context
+%%% TeX-master: t
+%%% End:

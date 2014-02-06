@@ -1,0 +1,237 @@
+\definepapersize[board][width=48in,height=36in]
+\setuppapersize[board][board]
+\setuppagenumbering[state=stop]
+\definebodyfontenvironment
+  [default][b=1.3,c=2,d=2.1]
+\definebodyfontenvironment[24pt]
+\definebodyfontenvironment[28.8pt]
+\definebodyfontenvironment[21.6pt]
+\definebodyfontenvironment[19.2pt]
+\definebodyfontenvironment[18pt]
+\definebodyfontenvironment[16pt]
+\definebodyfontenvironment[26pt]
+\definebodyfontenvironment[31.2pt]
+\definebodyfontenvironment[20.8pt]
+\definebodyfontenvironment[19.2pt]
+\definebodyfontenvironment[18pt]
+\definebodyfontenvironment[16pt]
+
+\definefontfamily[mainface][serif][TeX Gyre Pagella]
+\definefontfamily[mainface][math][TeX Gyre Pagella Math]
+\definefontfamily[mainface][mono][Consolas][scale=0.9]
+\setupbodyfont[mainface,25pt]
+\definefontfeature[smallcapitals][smcp=yes,kern=yes]
+\definefontfamily[titleface][serif][Crimson][features=smallcapitals]
+\setupalign[tolerant]
+
+\input bibliography
+
+\setupinterlinespace[1.3em]
+
+\definelayer[title][x=12.25in,y=0in, width=23.75in, height=2in]
+\definelayer[introduction][x=0.5in,y=3in,width=12in, height=32in]
+\definelayer[procedures][x=12.5in,y=3in, width=15in, height=32in]
+\definelayer[results][x=24.5in,y=3in, width=15in, height=32in]
+\definelayer[discussion][x=36.5in,y=3in, width=12in, height=32in]
+
+% https://kuler.adobe.com/TYPOGRAPHIC-CONTRAST-color-theme-3201506/
+\definecolor[background][r=0.17,g=0.25,b=0.36]
+\definecolor[foreground][r=1,g=1,b=1]
+\definecolor[highlight][r=1,g=0.95,b=0.75]
+\definecolor[bghighlight][r=0.9529412,g=0.5411765,b=0.4117647]
+
+\input gnuplot_board
+\input plots
+\def\showplot#1{
+  \startcolor[black]
+    \switchtobodyfont[24pt]
+    \framed[background=color,backgroundcolor=white]{
+      \useGNUPLOTgraphic[#1]
+    }
+    \switchtobodyfont[26pt]
+  \stopcolor
+}
+
+\def\sectiontitle#1{\startalignment[middle]{\switchtobodyfont[titleface]\scc #1}\stopalignment
+  \blank[0.1in] \setupindenting[yes,next,0.5in]}
+
+
+\setlayer[title][hoffset=0in,voffset=0in]{
+  \framed[width=\dimexpr23.5in-6pt,height=3in,frame=off,foregroundcolor=foreground,background=color,backgroundcolor=bghighlight,bottomframe=on,leftframe=on,rightframe=on,framecolor=highlight,rulethickness=3pt]{
+      {\tfd Enhancing Theoretical Understanding of the Onset of Type 1 Diabetes}
+    \blank[0.4cm]
+      {\tfb David Li}
+    \blank[0.4cm]
+      {\tfb Basha High School, 5990 South Val Vista Dr., Chandler, AZ 85249}
+  }
+}
+
+  \setupTABLE[frame=off]
+  \setupTABLE[row][offset=0in,toffset=0.3in]
+  \setupTABLE[row][first][offset=0in,toffset=0in]
+  \setupTABLE[c][distance=0em,width=15in]
+
+\setlayer[introduction][hoffset=0in,voffset=0.25in]{
+  \bTABLE
+  \bTR
+  \bTD
+  \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+    \sectiontitle{Introduction}
+
+    \input board_introduction.tex
+
+  }
+  \eTD
+  \eTR
+  \bTR
+  \bTD
+
+  \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+    \sectiontitle{Research Question}
+
+    How does treating the peptide clearance rate $\delta_p$ (essentially,
+    the level of pancreatic beta cells) as a {\em continuously} and slowly
+    varying parameter affect the qualitative behavior of the scaled reduced
+    immune model developed by Mahaffy and Edelstein-Keshet
+    \cite{Mahaffy2007}, and how can those findings be applied to
+    understanding and predicting the onset of type 1 diabetes?
+
+  }
+  \eTD
+  \eTR
+  \bTR
+  \bTD
+
+  \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+    \sectiontitle{Hypothesis}
+
+    If the model for the level of immune cells in the weeks before the onset
+    of type 1 diabetes is analyzed with both a continuously varying and a
+    static peptide clearance rate $δₚ$, then in the former analysis, the
+    oscillations present in the original model that indicate the onset of
+    diabetes will begin later than in the latter model because previous
+    research has shown this behavior is delayed in other systems when
+    similarly analyzed with a continuously varying parameter.
+
+  }
+  \eTD
+  \eTR
+  \eTABLE
+}
+
+\setlayer[procedures][hoffset=0in,voffset=0.25in]{
+  \bTABLE
+\bTR
+  \bTD
+
+  \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+    \sectiontitle{Experimental (Materials)}
+
+    \input board_materials
+  }
+  \eTD
+  \eTR
+  \bTR
+  \bTD
+  \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+    \sectiontitle{Experimental (Procedures)}
+
+    \input board_procedures
+
+  }
+  \eTD
+  \eTR
+
+  \bTR
+  \bTD
+
+  \eTD
+  \eTR
+  \eTABLE
+}
+
+\setlayer[results][hoffset=0in,voffset=0.25in]{
+  \bTABLE
+  \bTR
+  \bTD
+  \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+    \sectiontitle{Results}
+    \showplot{bifurcation_combined_12}
+    \showplot{bifurcation_combined_12_long}
+    \showplot{bifurcation_combined_21}
+
+    \indenting[no]
+      More T cells (higher A) = more beta cells destroyed
+
+      Not all parameter ranges tested are shown for lack of space
+
+
+  }
+  \eTD
+  \eTR
+
+  \bTR
+  \bTD
+  \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+    \sectiontitle{Discussion of Results}
+
+    \input board_discussion
+  }
+  \eTR
+  \eTD
+  \eTABLE
+}
+
+\setlayer[discussion][hoffset=0in,voffset=0.25in]{
+  \bTABLE
+
+  \bTR
+  \bTD
+  \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+    \sectiontitle{Conclusion}
+
+    \input board_conclusion
+  }
+  \eTR
+  \eTD
+
+  \bTR
+  \bTD
+  \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+    \sectiontitle{Future Research}
+
+    \input board_future_research
+  }
+  \eTD
+  \eTR
+
+  \bTR
+  \bTD
+  \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+    \sectiontitle{Works Cited}
+    \switchtobodyfont[22pt]
+    \placebibliography{summary.bib}
+  }
+  \eTR
+  \eTD
+
+  \bTR
+  \bTD
+  \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+    \sectiontitle{Acknowledgements}
+
+      Thanks to Dr.\ Michael McKelvy, Dr.\ Stephen Baer, Dr.\ Joseph
+      Mahaffy, Dr.\ Jiaxu Li
+
+  }
+  \eTR
+  \eTD
+  \eTABLE
+}
+
+\setupbackgrounds[page][background={color,title,introduction,procedures,results,discussion},backgroundcolor=background]
+\starttext
+
+~
+
+\stoptext

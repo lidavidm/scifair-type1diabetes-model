@@ -1,0 +1,285 @@
+23/11/2013:
+
+- Python and XPP did not match. Copied the equations from the XPP file to
+  the AUTO file and it worked; numerical issue due to order of operations!
+- __TODO__: change Python to use string formatting to avoid issues when
+  converting between float/mpf
+- __TODO__: is a `dps` of 200 actually necessary?
+- Working on setting up plots
+- Dropped `diagrams.py`; it isn't necessary as Gnuplot can directly read XPP
+  and Python output as a "CSV"
+- Changed parameter ranges to avoid divide-by-zero problems.
+- __TODO__: Generate bifurcation diagrams for each parameter range?
+
+1/12/2013
+
+- Wrote XPP ODE files for epsilon, k2 parameters
+  - Have to start with different initial conditions
+  - For epsilon, starts at biologically invalid parameter to obtain a steady
+    state for use with AUTO
+  - Could not get it to work with $a$
+  - __TODO__: Write the continuous version
+
+6/12/2013
+
+- Visited ASU, talked with Dr. Mahaffy, Dr. Baer, and Dr. Li
+  - Dr. Li: worked with type 2 diabetes models; University of Kentucky
+- Dr. Mahaffy's comments
+  - Model is too sensitive: small parameter fluctuations led to large
+    behavioral differences
+  - Experimental data has a few issues
+  - NOD mice: only 60% of females became diabetic, none of males, even
+    though all were identical clones
+  - Mice became diabetic at different times, but the researchers aligned
+    all data so it looked like all became diabetic at the same time
+  - Sensitivity of model *may* explain the variability in the experimental
+    data, or it could imply that the experimental data needs more work
+  - Possible extension to model: apply beta cell regeneration from type 2
+    diabetes models (rather complicated)
+- Dr. Baer's comments
+  - Try starting from past the Hopf bifurcation
+
+20/12/2013
+
+- For initial value of a15 > Hopf bifurcation point with continuous
+  parameter, the plot tracks the stable branch well but does not ever begin
+  oscillations
+- Supercritical Hopf bifurcation? (Becomes unstable when it was previously
+  stable)
+- Start each analysis with differing initial values, or same? HBP analysis
+  may have to be an exception
+- Slight perturbation of initial M, E values leads to massive oscillatory
+  behavior immediately; perturbation of A leads to minor oscillations that
+  die off
+- However, I can make the oscillations stop by starting from the branch and
+  increasing the parameter slowly
+- Python: use default `mpmath` precision
+- Python: finishd code for calculating time diagrams
+
+21/12/2013
+
+- In an effort to determine why I cannot delay the oscillations, only track
+  the steady state, I reproduced Dr. Baer's graph.
+- Set up the ODE files for the continuous analysis of the other two
+  parameters
+  - ~~TODO~~: Decide on a parameter range for those files
+
+22/12/2013
+
+- I can delay the oscillations from the first Hopf bifurcation. This
+  requires starting at a15 < 1; since a15=0 leads to numerical issues,
+  a15=0.1 seems to be the best.
+- Additionally, to make the parameter change more slowly, the parameter
+  ranges have been adjusted. 1 to 18 will no longer be tested; 1 to 4 has
+  become 0.1 to 2, and 3 to 1.5 has become 2 to 0.1.
+- These parameter ranges seem to accelerate the oscillations, which
+  Dr. Baer's paper discusses.
+- Procedures have been updated.
+- For the files mentioned yesterday, parameter ranges are now 0.1 to 2.
+- __TODO__: Fix bifurcation diagrams for continuous epsilon, k2. The
+  continuous parameter destroys the steady-states used for the static
+  analysis, thus different initial values are needed.
+
+23/12/2013
+
+- Regarding yesterday's TODO: it seems impossible, as the continuously
+  increasing a15 parameter leads to no equilibria for AUTO to start
+  from. Biologically, of course, a15 does not increase forever, but this is
+  difficult to model without knowing how it depends on the other variables
+  and how exactly it behaves; in that case, we simply return to the full
+  model, and the work has been done (for B rather than a15).
+
+24/12/2013
+
+- In an attempt to find a steady state for the continuous system, SciPy was
+  used to numerically solve the following system:
+
+    dA/dt = 0
+    dM/dt = 0
+    dE/dt = 0
+    a15 = a15
+
+  The equilibrium A, M, E, a15 = 1.96152423e-02, -5.00145950e-29,
+  6.53841409e-03, 1.50733061e-33 was found, but in the continuous system it
+  did not stay stable. Thus the best option seems to be to 1. drop this from
+  the experiment and 2. show that no equilibrium exists mathematically.
+
+25/12/2013
+
+- A more formal proof: in the original AME system, dA/dt, dM/dt, and dE/dt
+  are functions of A, M, and E only, with all other values being
+  constants. Notably, time does not factor in. However, the AME-a15 system
+  does depend on time through da15/dt, thus a15 is never in
+  equilibrium. Even when A, M, and E are in equilibrium (i.e. their
+  derivatives are zero), da15/dt is always nonzero and thus an equilibrium
+  never exists.
+
+26/12/2013
+
+- Experimenting in XPP AUTO:
+  - Points past the second Hopf bifurcation are unstable; if the initial
+    conditions are adjusted slightly, the system deteriorates and settles at
+    (0,0,0).
+  - Points on the steady-state before the Hopf bifurcation are stable,
+    changing the initial conditions causes the system to revert.
+  - Points on the cycles before the Hopf bifurcation are unstable, even at
+    high precision and small timestep the system always
+    deteriorates. (Unstable limit cycle)
+  - Reading through Mahaffy's paper confirms this.
+  - Reading through Baer's paper: the model there had a stable limit cycle
+    and an unstable steady state.
+- Trying to ramp from the other direction (da15/dt > 0, a < 4.063) leads to
+  tracking of the steady state as well.
+
+29/12/2013
+
+- As an example, the parameter range 0.1 to 2 has been added, but on a
+  timescale of 600 days.
+- Fixed bugs in Python RK4 configuration that made graphs not match XPP.
+- To make the combined diagrams easier to read, the x-range (delta_p range)
+  shown was changed to be from 0 to 3 rather than from 0 to 20, as the
+  parameter value never exceeds 3 in this experiment.
+
+31/12/2013
+
+- All data was cleared and experiment re-run for testing. Everything works
+  correctly; XPP and Python match.
+- For the graphs, an explicit range for the x axis was set.
+- The behavior of the second Hopf bifurcation discussed on 26/12 will not be
+  added as part of the experiment per se, but will be considered during the
+  analysis. This analysis requires different initial conditions, which are
+  biologically valid but not necessarily ones a system would start at.
+- Added graphs demonstrating how A can be ramped through the limit cycle
+  without oscillating.
+- Added arrows to combined graphs indicating the direction of time.
+
+1/1/2014
+
+- Created a GNU Makefile to automate parts of the process.
+- Data is ready for review; I will contact Dr. Baer.
+
+2/1/2014
+
+- Contacted Dr. Baer; meeting set up for 11:00 3/1/2014 at Basha Library
+- Added one more combined diagram to demonstrate ramping increasing δₚ
+
+3/1/2014
+
+- Met with Dr. Baer
+- His comments:
+  - Indicate the Hopf bifurcation points clearly
+  - Distinguish between stable/unstable branches on the graphs (either use
+    open points or dashed lines)
+  - Try a longer timeframe for the long timeframe and possibly slower
+    speeds, because the oscillation magnitude should reach the limit cycle
+    plotted
+    - Oscillation nearly reaches, but there is one oscillation past the end
+      of the bifurcation
+  - I need to explain why it doesn’t destabilize
+    - Perhaps the Hodgkin-Huxley paper would help
+  - With the WKB analysis method, I could possibly predict when it
+    destabilizes
+    - See: Baer (1989) §3, Holmes "Introduction to Pertubation Methods"
+  - Plot Re(λ) vs a₁₅ and Im(λ) vs a₁₅. The system destabilizes when the
+    area under the curve Re(λ) before the bifurcation point (x-intercept)
+    equals the area after
+
+4/1/2014
+
+- Modified bifurcation_diagrams.py to parse complete data, including eigenvalues
+- Clearly indicated stable/unstable and steady/periodic on graphs
+- Clearly indicated Hopf bifurcations on graphs
+
+6/1/2014
+
+- Tried higher precision in Python to see if the destabilization is due to a
+  numerical error; this does not appear to be the case
+- Working through WKB exercises; I will probably have to ask Dr. Baer a few
+  questions
+
+13/1/2014
+
+- Began working on calculations to find the eigenvalue of the AME system
+  manually as done in Dr. Baer's paper
+
+14/1/2014
+
+- Emailed Dr. Baer about the eigenvalues
+
+15/1/2014
+
+- Dr. Baer responded; I need to look at a higher zoom level in the diagram,
+  thus I need to get AUTO to save more points (currently it saves only 51
+  for the range 0 to 18)
+- I can achieve this by reducing the Dsmax (maximum step size) (so AUTO
+  calculates and saves more points) and increasing Nmax (maximum number of
+  steps along a branch) (so AUTO will cover the same range as before)
+- The aberration still exists; the eigenvalues calculated by AUTO do not
+  indicate that there is a Hopf bifurcation, nor do they cross the axis
+
+19/1/2014
+
+- Improved procedures on board
+- Tried to calculate eigenvalues manually; show no imaginary part + do not
+  match AUTO in any case
+
+20/1/2014
+
+- Calculating eigenvalues in XPP:
+  - In AUTO, set Dsmax = 0.01 and Nmax = 2000
+  - Grab the point a15 = 0.5707
+  - Go into XPP, Erase the plot and replot with Initialconds -> Go
+  - Calculate eigenvalues with Sing pts -> Go (check the console)
+  - At 0.5707 (Hopf bifurcation point):
+
+         Eigenvalues:
+         -2.293317  +  i  0.000000
+         -0.000197  +  i  0.544484
+         -0.000197  +  i  -0.544484
+
+  - But in AUTO we get
+
+        2 1 0.570742 1 11.5315 0.0701684 0.00712061 0.0211709 0.0701684 0.00712061 0.0211709 0.100911 0 0.855197 0.518311 0.855197 -0.518311
+
+    or
+
+        0.100911 + 0 i
+        0.855197 + 0.518311 i
+        0.855197 + -0.518311 i
+
+    the eigenvalues are wrong!
+
+  - Can I automate the 'correct' process somehow?
+    - XPP doesn't seem to provide this (perhaps Sing pts -> Range will work,
+      but for me it doesn't show eigenvalues)
+    - Calculate them manually
+      - Take the eigenvalues of the Jacobian - trying in Python + SymPy + mpmath
+
+21/1/2014
+
+- Python now gives the right eigenvalues! (They seem to be more accurate
+  than XPP's - key thing is agreement in imaginary part and in the real
+  eigenvalue)
+- Now need to automate generating A, M, E values
+  - Generate three separate bifurcation diagrams for A, M, E, export data?
+    - This worked. Exported data into Python (will have to stop using
+      IPython Notebook or else find a different way of importing the data
+      into the notebook, copy-pasting it makes the interface slow)
+    - Calculated all the eigenvalues (except for when a15==0) (this takes
+      forever! 1811 points)
+- Generated a plot, crosses axes at the correct points (yay)
+- New problem: area condition doesn't seem to be valid! Area under the axis
+  before the first point is much greater than the area after (Baer
+  anticipated that the condition may differ)
+- Now need WKB
+
+25/1/2014
+
+- Added "Discussion" section to board
+- Edited "Intro" section of board
+
+26/1/2014
+
+- No space for λ analysis on board; will have to leave for the paper
+- Reduced base font size to 25pt (from 26pt) to fit more on the board
+- Pushed a backup of everything to Bitbucket

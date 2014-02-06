@@ -1,0 +1,80 @@
+\environment env_hsr
+
+\starttext
+
+\title{Application of the Slow Passage through a Hopf Bifurcation to Models
+  for Arctic Sea Ice}
+
+David Li
+
+\blank[0.5cm]
+
+\noindentation
+
+The melting of Arctic sea ice has concerned climate change scientists due to
+its potential to greatly impact weather patterns in the United States and
+Europe. For instance, Greene and Monger cite evidence that links severe
+winter weather in the U.S.\ and Europe to the decline in summer sea ice
+\cite{Greene2012}. Such weather is controlled by the {\em Arctic
+  Oscillation} (AO), which in turn depends on the levels of sea ice. With
+lower ice levels in the summer, more of the ocean is exposed to solar
+radiation; the heat stored in the ocean warms the atmosphere during autumn,
+leading to conditions
+that allow cold Arctic air to affect lower
+latitudes—resulting in a cold winter. According to Greene and Monger,
+forecasters generally didn’t account for the AO when predicting weather
+because of its unpredictability, but the melting sea ice clearly caused a
+general trend in its behavior which matters in the long run. Arctic sea ice,
+rather than being a static system, changes continuously; in particular,
+levels of ice vary with the seasons \cite{Polyak2010}. A lack of sea ice,
+beyond the consequences described above, could lead to more coastal erosion
+and affect Atlantic current circulation, also affecting European and
+American weather. Clearly, the ability to accurately model the levels of ice
+in the Arctic matters to those studying this climate system and its
+consequences.
+
+Sea ice modeling applies physics and assumptions to approximate the behavior
+of the system \cite{Bitz2010}. Oftentimes such models are developed as
+components of a more comprehensive global climate model (GCM) that also
+simulates the atmosphere and ocean. Alternatively, simpler, mathematical
+models that incorporate various physical parameters have been studied, such
+as the one examined by Abbot et.\ al.\ \cite{Abbot2011}. Such models, which
+often consist of a few differential equations, are particularly interesting
+because of the possibility of bifurcations, or qualitative changes in the
+behavior of the system. Finding a bifurcation mathematically may raise the
+possibility of a real-world equivalent; in the case of sea ice, this may
+mean that beyond a certain level of greenhouse gas in the atmosphere, the
+Arctic ice system will suddenly transition to an ice-free state, rather than
+gradually shrinking over the years. Abbot’s study found that some such
+bifurcations existed in their model, but found that GCMs generally did not
+exhibit the same behavior in most cases.
+
+One type of bifurcation which Abbot et.\ al.\ did not study is known as a
+Hopf bifurcation. However, they can exhibit interesting behavior—notably,
+Baer et.\ al.\ studied their presence in a model for neurons and found that
+in some cases, such bifurcations could lead to erroneous results in the
+algorithms used to numerically approximate the solution to the model
+\cite{Baer1989}. In particular, such behavior occurred if the system used a
+parameter that slowly rose over time—in the case of a climate model, the
+level of greenhouse gases would be an example. Therefore, it would be
+important to know whether this also applies to the mathematical model
+discussed by Abbot et.\ al., as that study incremented greenhouse gas levels
+in discrete steps, but did not consider a continuously varying parameter as
+Baer did; furthermore, studying bifurcations in simpler models can help
+researchers recognize them in the more complicated GCMs
+\cite{Abbot2011}. Therefore, this leads to the question: {\em how does the
+  level of greenhouse gas as a slow parameter affect the behavior of an
+  Arctic sea ice model, and how can those conclusions be applied to a
+  general climate model?}
+
+\blank[0.5cm]
+
+\section{References}
+
+\placebibliography{summary.bib}
+
+\stoptext
+%%% Local Variables:
+%%% mode: context
+%%% TeX-master: t
+%%% End:

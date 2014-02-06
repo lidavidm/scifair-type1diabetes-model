@@ -1,0 +1,94 @@
+\environment env_whitepaper
+
+\starttext
+
+\title{Modeling of T Cells in Autoimmune Diabetes: Whitepaper \hfill \tf\color[black]{David Li <li.davidm96@gmail.com>}}
+
+\startcolumns[n=2,distance=0.2cm]
+  \setupalign[hyphenated]
+  \startsection[title={Importance}]
+    Autoimmune diabetes, or type 1 diabetes, is a chronic disease that
+    causes high blood glucose levels; this type of diabetes is an autoimmune
+    disorder, where the immune system attacks healthy body tissue, leading
+    to symptoms \cite{PubMed2013}. Furthermore, no screening test exists for
+    this disease, which can only be diagnosed after symptoms appear
+    \cite{PubMed2013}.
+
+  \stopsection
+
+  \startsection[title={Background}]
+    In type 1 diabetes, pancreatic beta cells do not produce enough insulin,
+    a hormone used by cells to take glucose from the blood; thus, sugar
+    builds up and cells cannot use glucose for energy, leading to symptoms
+    such as blurry vision and possibly complications such as blindness
+    \cite{PubMed2013}. The lack of insulin stems from the destruction of the
+    beta cells by the immune system. Research with NOD (non-obese diabetic)
+    mice has demonstrated that the onset of diabetes follows an elevated
+    level of autoreactive T cells in the blood (which destroy beta cells);
+    furthermore, the level of these cells followed a cyclic pattern over
+    time \cite{Trudeau2003}.  To better understand this mechanism underlying
+    these oscillations, Mahaffy and Keshet constructed a mathematical model
+    that explained the cause of the phenomenon as a gradual decrease in beta
+    cell level \cite{Mahaffy2007}.
+
+    Mathematical analysis of such models can reveal bifurcations, or
+    qualitative changes in behavior; such findings can be applied to predict
+    similar changes in real-world systems. One type, termed a Hopf
+    bifurcation, is of particular note because when the model parameter is
+    continuously slowly varying, the oscillations this bifurcation normally
+    causes will be delayed and will occur later than expected
+    \cite{Baer1989}.  Mahaffy’s model has a Hopf bifurcation, which is
+    responsible for the oscillating T cell levels, but the researchers did
+    not analyze it with a continuously varying parameter.
+
+  \stopsection
+
+  \startsection[title={What’s Not Known}]
+    The creators of the model explicitly state the beta cell level slowly
+    varies \cite{Mahaffy2007}, but did not analyze it by continuously
+    varying the parameter; instead, they looked at the behavior with
+    multiple static values of the level of beta cells. Since having a
+    continuous parameter can change the qualitative behavior of a system,
+    and thus affect the conclusions regarding the validity of a model,
+    conducting this analysis matters – especially as it affects the Hopf
+    bifurcation, which explains the oscillations that experimentally
+    preceded the onset of diabetes \cite{Baer1989}\cite{Mahaffy2007}.
+  \stopsection
+
+  \startsection[title={Question}]
+    As the accuracy of the model would impact the conclusions drawn and
+    possible applications, then naturally this question follows: how does
+    treating the level of beta cells as a {\em continuously} varying slow
+    parameter affect the qualitative behavior of the immune model, and how
+    can those findings be applied to understanding and predicting autoimmune
+    (type 1) diabetes?
+  \stopsection
+
+  \startsection[title={Required Resources}]
+    Due to the nature of the model, simulation is certainly doable on
+    commodity computer hardware. Thus, no special equipment is necessary to
+    investigate this question. However, being able to consult with a
+    qualified scientist would help in verifying calculations, interpreting
+    the results, and making better conclusions.
+  \stopsection
+
+  \startsection[title={Impact}]
+    Analyzing the model with a continuously varying slow parameter could
+    imply new physical behavior to search for; in particular, the ability to
+    delay the onset of oscillations may predict a way to prevent the
+    development of diabetes. Meanwhile, a more accurate model could improve
+    the usefulness of this research in predicting diabetes. On the other
+    hand, if the new model no longer matches the experimental evidence, that
+    would indicate that it may not correctly model the actual behavior of
+    the immune system, thus indicating to researchers that they should focus
+    their efforts elsewhere.
+  \stopsection
+\stopcolumns
+\page[yes]
+\startsection[title={References}]
+  \setupalign[flushleft]
+  \indenting[no]
+  \placebibliography{summary.bib}
+\stopsection
+
+\stoptext

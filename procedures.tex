@@ -1,0 +1,285 @@
+\environment env_essay
+\usemodule[tabl-nte]
+\input bibliography
+\setmonofont[Consolas][scale=0.9]
+\indenting[no]
+\setupitemgroup[itemize][indenting=no]
+\setupwhitespace[small]
+\def\mydots{\leavevmode\xleaders\hbox to 0.2em{\hfil.\hfil}\hfill\kern0pt}
+
+\setuphead[title][style=\tfb,after={},before={}]
+\setuphead[section][number=no,style=\tfa,before={\blank[0.5cm]}]
+\setuplabeltext[en][appendix=Appendix~]
+\definehead[appendix][chapter]
+\def\Appendix#1{Appendix #1.}
+\setuphead[appendix][before={}, after={}, page=no, numbercommand=\Appendix,style={\tfa}, number=yes,conversion={A}]
+
+\starttext
+
+\title{Proposed Procedures: Continuous Analysis of a Model for T Cells in
+  Autoimmune Diabetes}
+
+David Li
+
+\startsection[title={Materials}]
+
+Estimated Total Cost\mydots \$0
+
+\startitemize[n,joinedup]
+
+\startitem Computer (x86-64 architecture running a Linux distribution; no
+  need to purchase)\mydots \$0
+
+For reference, the computer used in this experiment has the following
+specifications:
+
+\startitemize[1]
+\item Processor: Intel Core i5-3230M
+\item Memory: 4GB
+\item Linux distribution: Arch Linux
+\stopitemize
+\stopitem
+
+\startitem Computer Software\mydots \$0
+
+\startitemize[1]
+\item Python 3.3.2 with {\tt mpmath} (arbitrary-precision arithmetic)
+  (\hyphenatedurl{http://www.python.org}, \hyphenatedurl{http://www.mpmath.org})
+\item XPP AUTO 7.0 (bifurcation analysis)
+  (http://www.math.pitt.edu/\textasciitilde bard/xpp/xpp.html)
+\item \CONTEXT \ 2013.05.28 (typesetting) (http://wiki.contextgarden.net)
+\item Gnuplot (plotting)
+\stopitemize
+
+\stopitem
+
+\stopitemize
+
+\stopsection
+
+\startsection[title={Procedures}]
+
+  {\em Note: familiarity with the Linux command line is assumed, though the
+    software used should run on Windows. Also note: {\tt diagrams.py}, {\tt
+      time_diagrams.tex}, and {\tt bifurcation_diagrams.tex} do not yet
+    exist. Further automation scripts may eventually be created, thus the
+    procedures may differ.}
+
+\startitemize[n,joinedup]
+\item Download the necessary experiment software and experiment files
+  (location TBD).
+\item Extract the experiment files to a directory.
+\item Open a shell and {\tt cd} to the directory containing the experiment
+  files.
+\startitem To generate plots of the system over time:
+  \startitemize[a]
+  \item Run {\tt python rk4_ode.py} to generate the data via the Runge-Kutta
+    method.
+  \item Run {\tt ../path_to_xpp/xppaut -silent mk.ode} to generate the data
+    via XPP AUTO.
+  \item Run {\tt python diagrams.py time} to generate the \TEX{} plot files.
+  \item Run {\tt context time_diagrams.tex} to generate a PDF containing the
+    plots.
+  \stopitemize
+\stopitem
+\startitem Then, to generate the plots of the system vs the bifurcation
+  parameter (the peptide clearance rate, $δₚ$):
+  \startitemize[a]
+  \startitem Run {\tt ../path_to_xpp/xppaut -runnow mk_static.ode} to launch XPP
+    AUTO.
+    \startitemize[i]
+    \item Press {\tt f a} to bring up AUTO.
+    \item Press {\tt f l} and choose {\tt mk_static.ode.auto} to load the
+      parameters for the bifurcation diagram.
+    \item Press {\tt r s} to generate the diagram.
+    \item Press {\tt g <TAB> <ENTER> r p} to generate the branches for the
+      first bifurcation.
+    \item Press {\tt g <TAB> <TAB> <ENTER> r p} to generate the branches for
+      the second bifurcation.
+    \item Press {\tt f w} and save the points in {\tt mk_static.dat}.
+    \item Close XPP AUTO ({\tt Control-C} the program in the terminal).
+    \stopitemize
+  \stopitem
+  \item Run {\tt python diagrams.py bifurcation} to generate the \TEX{} plot
+    files.
+  \item Run {\tt context bifurcation_diagrams.tex} to generate a PDF
+    containing the plots.
+  \stopitemize
+\stopitem
+\stopitemize
+
+Parameter Values (for the programs, not the system of ODEs):
+\blank[line]
+
+\setupTABLE[r][first][style=bold]
+\startlocalfootnotes
+\startTABLE
+\setupTABLE[c][1][width=.7\textwidth]
+\setupTABLE[c][2][width=.3\textwidth]
+\bTABLEhead
+\NC Parameter \NC Value \NC\NR
+\eTABLEhead
+
+\bTABLEbody
+\NC Integration time (the time the system will be run for) \NC 200 days \NC\NR
+\NC Integration step (RK4)\footnote[foot:int-step]{RK4 and XPP AUTO use
+  different integration algorithms, thus a different step size should not
+  matter.} (the time interval used) \NC 0.01 days \NC\NR
+\NC Integration step (XPP AUTO)\note[foot:int-step] \NC 0.05 days \NC\NR
+\NC AUTO Par 1 \NC {\tt a15} \NC\NR
+\NC AUTO Hi-Lo Y-axis \NC {\tt A} \NC\NR
+\NC AUTO Hi-Lo Main Parameter \NC {\tt a15} \NC\NR
+\NC AUTO Hi-Lo X range \NC $\left[0, 18 \right]$ \NC\NR
+\NC AUTO Hi-Lo Y range \NC $\left[0, 3\right]$ \NC\NR
+\NC AUTO Par Max\footnote{All parameters for AUTO not listed were left at
+  their default values.} \NC 18 \NC\NR
+\eTABLEbody
+
+\stopTABLE
+
+Initial Conditions
+\blank[line]
+
+\startTABLE
+\bTABLEhead
+\NC Initial Conditions\footnote{$B$ was left at 1; all parameters had their
+  default scaled values.} \NC Value of $A$ \NC Value of $M$ \NC Value of
+$E$\NC Value of $a_{15}$\NC\NR
+\eTABLEhead
+
+\bTABLEbody
+\NC \quotation{Typical} (diseased) state, used for the static bifurcation diagram \NC 0.5 \NC 0 \NC 1 \NC 1 \NC\NR
+\NC Healthy state \#1 \NC 0 \NC 0 \NC 1 \NC 1 \NC\NR
+\NC Healthy state \#2 \NC 0 \NC 0.5 \NC 1 \NC 0 \NC\NR
+\eTABLEbody
+
+\stopTABLE
+
+Parameter Ranges (for the peptide clearance rate $δₚ$)
+
+As the total time is 200 days, the parameter will be varied at a rate of $
+\displaystyle\frac{δₚ₂ - δₚ₁}{200}$ per day.
+
+\startitemize[1,joinedup]
+\item 0 to 4
+\item 0 to 18
+\item 3 to 1.5
+\stopitemize
+
+\placelocalfootnotes
+\stoplocalfootnotes
+
+\stopsection
+
+\startappendix[title={Program Files}]
+  XPP AUTO ODE file (based on \cite{Mahaffy2007}). This file sets up the
+  system of equations
+
+\startformula \startalign
+p \NC = \NC \frac{a_{14}}{a_{15}}EB \;\;\;\;\;
+f₁ = \frac{pⁿ}{k₁ⁿ+pⁿ} \;\;\;\;\;
+f₂ = \frac{ak₂ᵐ}{k₂ᵐ+pᵐ} \NR
+\frac{dA}{dt} \NC = \NC(a₆+a₇M)f₁(p) - a₈A - a₉A² \NR
+\frac{dM}{dt} \NC = \NC a_{10}f₂(p)A-f₁(p)a₇a_{16}M - a_{11}M \NR
+\frac{dE}{dt} \NC = \NC a_{12}(1-f₂(p))A-a_{13}E \NR
+\frac{dB}{dt} \NC = \NC -a_{17}EB \NR
+\stopalign \stopformula
+\setuptyping[escape=yes]
+\starttyping
+
+p = a14*E*B/a15
+f1 = p^a1/(a2^a1+p^a1)
+f2 = a4*a5^a3/(a5^a3+p^a3)
+A' = f1*(a6+a7*M)-a8*A-a9*A^2
+M'= a10*f2*A-f1*a16*a7*M-a11*M
+E' = a12*(1-f2)*A-a13*E
+# Disease-free initial conditions
+# init A=0.5,M=0,E=1
+# Diseased initial conditions
+# init A=0.5,M=0.0,E=1
+
+# Continuously decreasing analysis
+# p is in the range 0-10 so a15 can be
+# in the range 1 to infinity (p=0)
+par B=1
+a15'=/BTEX\em<RATE OF CHANGE OF PARAMETER>/ETEX
+init a15=/BTEX\em<INITIAL PARAMETER VALUE>/ETEX
+par a1=2,a2=2,a3=3,a4=0.7,a5=1,a6=0.02
+par a7=20,a8=1.0,a9=1.0,a10=1,a11=0.01,a12=0.1
+par a13=0.3,a14=50,a16=0.1,a17=0.14
+@ dt=/BTEX\em<TIME STEP>/ETEX
+@ total=/BTEX\em<FINAL TIME>/ETEX
+@ xlo=0,xhi=200,ylo=0,yhi=4
+@ NPLOT=4, XP=t, YP=A, XP2=t, YP2=M, XP3=t, YP3=E
+done
+
+\stoptyping
+
+Python 4\high{th} order Runge-Kutta solver for a system of ODEs (based on
+\cite{Gonsalves2009}).
+
+\starttyping
+from mpmath import mpf, mp
+
+def vectorize(functions):
+    def _vectorized(x, ys):
+        return tuple(f(x, *ys) for f in functions)
+    return _vectorized
+def inc_vec(vec, inc):
+    return [x + inc for x in vec]
+def add_vec(*vecs):
+    return [sum(nums) for nums in zip(*vecs)]
+def mul_vec(vec, mul):
+    return [x * mul for x in vec]
+def rk4_system(y, x0, y0, h, steps):
+    """
+    y: list of ODE
+    y0: vector of initial ys (tuple)
+    Finds y(x0 + h * steps)
+    """
+    x1 = x0
+    y1 = list(y0)
+    xs = [x0]
+    ys = [[y0[i]] for i,f in enumerate(y)]
+    f = vectorize(y)
+    for i in range(steps):
+        k1 = f(x1, y1)
+        k2 = f(x1 + (h / 2), add_vec(y1, mul_vec(k1, h / 2)))
+        k3 = f(x1 + (h / 2), add_vec(y1, mul_vec(k2, h / 2)))
+        k4 = f(x1 + h, add_vec(y1, mul_vec(k3, h)))
+        y1 = add_vec(y1, mul_vec(add_vec(k1, mul_vec(k2, 2),
+                     mul_vec(k3, 2), k4), h / 6))
+        for i, val in enumerate(y1):
+            ys[i].append(val)
+        xs.append(x1)
+        x1 += h
+    return xs, ys
+
+
+if __name__ == '__main__':
+    /BTEX\em\# PARAMETER DEFINITIONS OMITTED (SEE PAPER FOR VALUES)/ETEX
+    f_1 = lambda p: p**a1 / (a2**a1 + p**a1)
+    f_2 = lambda p: a4 * a5**a3 / (a5**a3 + p**a3)
+    p = lambda t, E, B, a15: a14 * E * B / a15
+    y = (
+        lambda t,A,M,E,B,a15:(a6+a7*M)*f_1(p(t,E,B,15))-a8*A-a9*A**2,#dA/dt
+        lambda t,A,M,E,B,a15:a10*f_2(p(t,E,B,a15))*A-f_1(p(t,E,B,a15))*a7*a16*M-a11*M,#dM/dt
+        lambda t,A,M,E,B,a15:a12*(1-f_2(p(t,E,B,a15)))*A-a13*E,#dE/dt
+        lambda t,A,M,E,B,a15:-a17*E*B,#dB/dt
+        lambda t,A,M,E,B,a15:0.1#da15/dt
+    )
+    result = rk4_system(y, mpf('0'), (/BTEX\em<INITIAL CONDITIONS>/ETEX), /BTEX\em<TIME STEP>/ETEX, /BTEX\em<STEPS>/ETEX)
+
+    import pickle
+    pickle.dump(result, open('rk4_ode.pickle', 'wb'))
+\stoptyping
+
+\stopappendix
+
+\startappendix[title={Bibliography}]
+
+\placebibliography{summary.bib}
+
+\stopappendix
+
+\stoptext

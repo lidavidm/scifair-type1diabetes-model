@@ -1,0 +1,28 @@
+\usemodule[gnuplot]
+
+
+\setupGNUPLOT[terminal=context,options={size 7in,4in}]
+\startGNUPLOTinclusions
+  set datafile separator " ";
+  set key inside right top;
+  set style line 1 lt 1 lc rgb "#1f77b4" lw 5 pt 0 ps 3;
+  set style line 13 lt 3 lc rgb "#1f77b4" lw 4 pt 0 ps 3;
+  set style line 14 lt 1 lc rgb "#1f77b4" lw 7 pt 0 ps 3;
+  set style line 15 lt 1 lc rgb "#1f77b4" lw 9 pt 6 ps 3;
+  set style line 2 lt 1 lc rgb "#ff7f0e" lw 7;
+  set style line 3 lt 1 lc rgb "#2ca02c" lw 7 pt 0 ps 1;
+  set style line 4 lt 1 lc rgb "#d62728" lw 7 pt 0 ps 3;
+  set style line 43 lt 1 lc rgb "#d62728" lw 7 pt 6 ps 3;
+  set style arrow 12 ls 2;
+  set style arrow 16 ls 2 lw 3;
+  set style line 80 lt rgb "#000000";
+  set style line 81 lt 0 lw 3;
+  set style line 81 lt rgb "#999999";
+
+  #set grid back linestyle 81;
+  #set border 3 back linestyle 80;
+\stopGNUPLOTinclusions
+%%% Local Variables:
+%%% mode: context
+%%% TeX-master: t
+%%% End:

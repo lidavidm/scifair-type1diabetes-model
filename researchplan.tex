@@ -1,0 +1,107 @@
+\environment env_essay
+\indenting[no]
+\setupitemgroup[itemize][indenting=no]
+\setupwhitespace[small]
+\setuphead[title][style=\tfb,after={},before={}]
+\setuphead[section][number=no,style=\tfa,before={\blank[0.2cm]},after={\blank[0.1cm]}]
+\setuphead[subsection][number=no,style=\tf\em,before={},after={}]
+
+\input bibliography
+
+\setupheadertexts[][David Li][David Li][]
+
+\starttext
+
+\title{Research Plan}
+
+David Li
+
+\startsection[title={Question}]
+  How does treating the level of beta cells as a {\em continuously} varying
+  slow parameter affect the qualitative behavior of the scaled reduced
+  immune model developed by Mahaffy and Edelstein-Keshet \cite{Mahaffy2007},
+  and how can those findings be applied to understanding and predicting
+  type 1 diabetes?
+\stopsection
+
+\startsection[title={Goals and Hypothesis}]
+  \startsubsection[title={Background Information}]
+    Autoimmune diabetes, or type 1 diabetes, is a disease in which the
+    immune system attacks insulin-producing pancreatic beta cells, leading
+    to high blood glucose levels and other symptoms
+    \cite{PubMed2013}. Furthermore, no screening test exists for this
+    disease, which can only be diagnosed after symptoms appear
+    \cite{PubMed2013}. Research with NOD (non-obese diabetic) mice has
+    demonstrated that the onset of diabetes follows an elevated level of
+    autoreactive T cells in the blood (which destroy beta cells);
+    furthermore, the level of these cells followed a cyclic pattern over
+    time \cite{Trudeau2003}. To better understand the mechanism underlying
+    these oscillations, Mahaffy and Keshet constructed a mathematical model
+    that explained the phenomenon as caused by a gradual decrease in beta
+    cell level \cite{Mahaffy2007}.
+
+    Mathematical analysis of such models can reveal bifurcations, or
+    qualitative changes in behavior; such findings can be applied to predict
+    similar changes in real-world systems. One type, termed a Hopf
+    bifurcation, is of particular note because when the model parameter is
+    continuously slowly varying, the oscillations this bifurcation normally
+    causes will be delayed and will occur later than expected
+    \cite{Baer1989}.  Mahaffy’s model has a Hopf bifurcation, which is
+    responsible for the oscillating T cell levels, but the researchers {\em
+      did not analyze it with a continuously varying parameter}, though they
+    explicitly stated the parameter should behave this way.
+  \stopsubsection
+  \startsubsection[title={Goals}]
+    This experiment aims to complete the analysis by looking into the
+    behavior of the model when the level of pancreatic beta cells is treated
+    as a continuously varying parameter. In particular, the analysis will
+    focus on the behavior of the model with this modification compared to
+    the behavior described in the original paper and the behavior of actual
+    the biological system in NOD mice.
+  \stopsubsection
+  \startsubsection[title={Hypothesis}]
+    If the model for the level of immune cells in the weeks before the onset
+    of type 1 diabetes is analyzed with both a continuously varying and a
+    static peptide clearance rate $δₚ$, then in the former analysis, the
+    oscillations present in the original model will begin at a later time
+    because research has shown this behavior is delayed in other models
+    when analyzed with a continuously varying parameter.
+  \stopsubsection
+\stopsection
+
+\startsection[title={Procedures}]
+  See the attached procedures.
+
+  \startsubsection[title={Risk and Safety}]
+    As the experiment solely involves numerical computations, no safety
+    risks are anticipated.
+  \stopsubsection
+  \startsubsection[title={Data Analysis}]
+    After simulation, the experiment will result in a set of bifurcation
+    diagrams as well as model-over-time diagrams.  The bifurcation diagram
+    shows the maximum and minimum values of $A$ over time for a trial run of
+    the model with the particular parameter level indicated on the
+    x-axis. Thus, the bifurcation diagram shows at what {\em static}
+    parameter levels diabetes can occur. For this experiment, a third
+    diagram will be generated overlaying the model-over-time diagram for the
+    {\em continuous} system onto the bifurcation diagram. Since the
+    parameter will continuously and linearly vary over time, a
+    correspondence between the points of the two graphs exists (i.e.\ for
+    the model-vs-time graph, at a certain time, the parameter will be at a
+    unique particular value in the X-range of the bifurcation diagram), and
+    therefore the two modes of simulation can be compared – the goal of this
+    experiment.
+  \stopsubsection
+\stopsection
+
+\startsection[title={Bibliography}]
+\inviscite{Mahaffy2007}
+\inviscite{Baer1989}
+\inviscite{Mpmath2013}
+\inviscite{PubMed2013}
+\inviscite{Gonsalves2009}
+
+\placebibliography{summary.bib}
+\stopsection
+
+\stoptext
