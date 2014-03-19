@@ -1,52 +1,60 @@
-XPP AUTO, used in the original paper, is used to compute a bifurcation
-diagram:
+  \setlocalhsize \hsize\localhsize
+  \startsimplecolumns
+    {\bf Materials.}
+\startitemize[1,joinedup]
 
-\showplot{bifurcation_xpp_simple}
+  \startitem Computer (x86-64 architecture running a Linux distribution)
 
-This shows, at a particular level of beta cells, possible states of the
-model (i.e.\ level of T cells). The higher the T cell level, the more beta
-cells can be destroyed. On a steady state, the system remains at a fixed
-level of T cells; in contrast, the level oscillates on a periodic state. If
-a state is steady, then introducing a small deviation will result in the
-system returning to the original state, while an unstable state will move
-towards another state. The points labeled \quotation{HB} are {\em Hopf
-  bifurcations}, points at which the system changes qualitative
-behavior—from stable to periodic or vice-versa.
+    \indenting[no] The software used runs on all platforms; a relatively
+    recent (past 5 years or so) computer will suffice.
+  \stopitem
 
-Now, for the {\em continuous} analysis, the model starts at a particular
-$a_{15}$ (= 1/beta cell) level, which varies linearly over time. Because
-this variation is linear, at each time the $a_{15}$ level is unique, and
-thus the $A$ vs $t$ plot of this model can be overlaid on the bifurcation
-diagram as a $A$ vs $a_{15}$ plot, allowing them to be compared (see the
-diagrams below).
+  \startitem Computer Software: Python 3.3.3 with {\tt mpmath}, {\tt
+    matplotlib}; XPP AUTO 7.0; \CONTEXT \ 2014.01.03; Gnuplot 4.6.4
+  \stopitem
+\stopitemize
+
+{\bf Procedure.} XPP AUTO is used to compute a bifurcation diagram:
+
+\midaligned{\showplot{bifurcation_xpp_simple}}
+
+This shows, at a particular beta cell level, possible model states (T cell
+levels). The higher the level, the more beta cells can be destroyed. On a
+steady state, the system remains at a fixed T cell level, while the level
+oscillates on a periodic state. Introducing a small deviation on a steady
+state will result in the system returning to the original state, while in an
+unstable state the system may move towards another state. \quotation{HB}
+indicates a {\em Hopf bifurcation}, a point at which the system changes from
+stable to periodic or vice-versa. For the {\em continuous} analysis, the
+model starts at a particular $a_{15}$ level, which varies linearly over
+time. At each time the $a_{15}$ level is unique, and thus the $A$ vs $t$
+plot can be overlaid on the bifurcation diagram as a $A$ vs $a_{15}$ plot to
+compare them (see {\em Results}).
 
 The model equations are
 
-\setupformulas[spacebefore=,spaceafter=]
+{\switchtobodyfont[20pt]
+\setupformulas[spacebefore=,spaceafter=,distance=0pt,margin=no]
 \startformula\startalign
-  \frac{dA}{dt} \NC = \NC(a₆+a₇M)f₁(p) - a₈A - a₉A² \NR
-  \frac{dM}{dt} \NC = \NC a_{10}f₂(p)A-f₁(p)a₇a_{16}M - a_{11}M \NR
-  \frac{dE}{dt} \NC = \NC a_{12}(1-f₂(p))A-a_{13}E \NR
-\stopalign\stopformula
-\startformula
-  p = \frac{a_{14}}{a_{15}}EB \;\;\;\;\; f₁ =
-  \frac{p^{a_1}}{{a_2}^{a_1}+p^{a_1}} \;\;\;\;\; f₂ =
-  \frac{{a_4}{a_5}^{a_3}}{{a_5}^{a_3}+p^{a_3}}
-\stopformula
+  \NC \frac{dA}{dt} \NC = (a₆+a₇M)f₁(p) - a₈A - a₉A² \;\;\;\;\; \frac{dM}{dt} = a_{10}\,f₂(p)A-f₁(p)a₇a_{16}M - a_{11}M \NR
+  \NC \frac{dE}{dt} \NC = a_{12}(1-f₂(p))A-a_{13}E \;\;\;\;\; p =
+  \frac{a_{14}}{a_{15}}EB \;\;\;\;\; f₁ = \frac{p^{a_1}}{{a_2}^{a_1}+p^{a_1}}  \;\;\;\;\; f₂ = \frac{{a_4}{a_5}^{a_3}}{{a_5}^{a_3}+p^{a_3}}\NR
+\stopalign
+\stopformula}
 
 with $ a_{15} = δₚ = \mfunction{constant} $ for the bifurcation diagram or $
 \frac{da₁₅}{dt} = \frac{dδₚ}{dt} = \mfunction{rate~of~change} $ for the
 continuous analysis. Here, $A$ is the level of activated T cells, $B$
 pancreatic beta cells, $E$ effector T cells, $M$ memory T cells, and $p$
-peptide level. In the model, beta cells that undergo apoptosis (cell death)
-generate peptide; then, T cells become activated, \quotation{recognizing}
-this peptide. These then become either effector cells, which destroy
-pancreatic cells and produce more peptide, or memory cells that encounter
-the peptide and trigger an immune response.
+peptide level. Beta cells that undergo apoptosis generate peptide; then, T
+cells become activated, \quotation{recognizing} this peptide. These then
+become either effector cells, which destroy pancreatic cells, or memory
+cells, which trigger an immune response.
 
-A 4th order Runge-Kutta solver is used to solve the continuous
-system. Runge-Kutta is a standard algorithm for solving differential
-equations \cite{Gonsalves2009}, used here because the continuous analysis
-could lead to numerical precision errors \cite{Baer1989}, and this
-implementation allows for arbitrary-precision computations
-\cite{Mpmath2013}.
+A 4th order Runge-Kutta solver (RK4) written in Python using {\tt mpmath} is
+used to solve the continuous system. RK4 is standard for solving
+differential equations \cite{Gonsalves2009}, used here because the
+continuous analysis could lead to numerical precision errors
+\cite{Baer1989}, and this implementation allows for arbitrary-precision
+computations \cite{Mpmath2013}.
+  \stopsimplecolumns

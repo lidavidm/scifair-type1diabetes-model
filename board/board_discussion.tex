@@ -4,20 +4,41 @@ at a particular \math{\delta_p}, the level of T cells the static model
 \quotation{settles into} over time. If multiple values are shown for a
 particular \math{\delta_p}, then the system oscillates between those values
 over time (and in this model, oscillations imply symptoms of diabetes
-\cite{Mahaffy2007}). Meanwhile, the continuous model (orange) shows T cell
-level vs.\ time; since \math{\delta_p} varies linearly with time, each
-\math{\delta_p} corresponds to exactly one unique time value. The arrow in
-the upper right indicates the direction of time.
+\cite{Mahaffy2007}). Meanwhile, the continuous model (orange), which is the
+focus of this experiment, shows T cell level vs.\ time; since
+\math{\delta_p} varies linearly with time, each \math{\delta_p} corresponds
+to exactly one unique time value. The arrow in the upper right indicates the
+direction of time.
 
 In the original experiments with mice, the appearance of symptoms of
 diabetes corresponded with cyclic fluctuations in the level of T cells
-\cite{Trudeau2003}. Looking at the first plot, as the level of T cells
-decreases over time in the continuous model, some oscillations appear before
-the point they are expected to (the {\em Hopf bifurcation} point, labeled
-\quotation{HB}). Given the large error bars in the original experiments,
-however, such small oscillations may not be of note and may explain why only
-a few oscillations were found in the mice. When the same amount of beta cell
-destruction is spread out over a longer timeframe—1000 days rather than 200
-(the experiments covered roughly 200 days)—the oscillations occur far later
-than they should. Thus, theoretically, a way to prevent beta cell
-destruction would only delay the onset of symptoms.
+\cite{Trudeau2003}. (See the diagram in the introduction.)  Looking at
+figure 1, as the level of T cells decreases over time in the continuous
+model, some oscillations appear before the point they are expected to (the
+{\em Hopf bifurcation} point, labeled \quotation{HB}). Given the large error
+bars in the original experiments, however, such small oscillations may not
+be of note and may explain why only a few oscillations were found
+experimentally in the mice. In figure 2, when the same amount of beta cell
+destruction occurs over a longer timeframe—1000 days rather than 200 (note
+the experiments covered roughly 200 days)—the oscillations occur far later
+than they should. This implies that theoretically, a way to slow down beta
+cell destruction would delay the onset of symptoms. Meanwhile, in figure 3,
+the beta cell level increases at a rate that outpaces the destruction caused
+by the immune system. In this scenario, the immune system still displays the
+response characteristic of the onset of diabetes—but as beta cell level is
+increasing, this response does not matter. Figure 4 examines the other Hopf
+bifurcation present, passing through it slowly; no oscillations occur, as
+expected: a high \math{\delta_p} is normal \cite{Mahaffy2007} and increasing
+it (or decreasing it; not shown) does not lead to disease.
+
+\midaligned{\startcombination[2*1]
+  {\externalfigure[precision_double][scale=600]}{}
+  {\externalfigure[precision_100][scale=600]}{}
+\stopcombination}
+
+As for numerical precision, this experiment compared results from XPP and
+Python; no qualitative difference was found. Further tests found that
+running this model at double precision with certain parameter values leads
+to incorrect results: at left is double precision, at right a higher
+precision. The former incorrectly shows oscillations that begin too early
+and that oscillate too frequently.

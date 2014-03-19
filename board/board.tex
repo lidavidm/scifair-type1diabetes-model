@@ -28,11 +28,13 @@
 
 \setupinterlinespace[1.3em]
 
-\definelayer[title][x=12.25in,y=0in, width=23.75in, height=2in]
+\definelayer[title][x=12.5in,y=0in, width=23.5in, height=2in]
 \definelayer[introduction][x=0.5in,y=3in,width=12in, height=32in]
 \definelayer[procedures][x=12.5in,y=3in, width=15in, height=32in]
-\definelayer[results][x=24.5in,y=3in, width=15in, height=32in]
-\definelayer[discussion][x=36.5in,y=3in, width=12in, height=32in]
+%\definelayer[results][x=24.5in,y=3in, width=15in, height=32in]
+\definelayer[results][x=12.5in,y=14.7in, width=15in, height=32in]
+\definelayer[resultsb][x=24.5in,y=14.7in, width=15in, height=32in]
+\definelayer[discussion][x=36in,y=3in, width=12in, height=32in]
 
 % https://kuler.adobe.com/TYPOGRAPHIC-CONTRAST-color-theme-3201506/
 \definecolor[background][r=0.17,g=0.25,b=0.36]
@@ -57,8 +59,8 @@
 
 
 \setlayer[title][hoffset=0in,voffset=0in]{
-  \framed[width=\dimexpr23.5in-6pt,height=3in,frame=off,foregroundcolor=foreground,background=color,backgroundcolor=bghighlight,bottomframe=on,leftframe=on,rightframe=on,framecolor=highlight,rulethickness=3pt]{
-      {\tfd Enhancing Theoretical Understanding of the Onset of Type 1 Diabetes}
+  \framed[width=\dimexpr23in-6pt,height=3in,frame=off,foregroundcolor=foreground,background=color,backgroundcolor=bghighlight,bottomframe=on,leftframe=on,rightframe=on,framecolor=highlight,rulethickness=3pt]{
+      {\bfd Enhancing Theoretical Understanding of the Onset of Type 1 Diabetes}
     \blank[0.4cm]
       {\tfb David Li}
     \blank[0.4cm]
@@ -75,7 +77,7 @@
   \bTABLE
   \bTR
   \bTD
-  \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+  \framed[width=\dimexpr11.5in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
     \sectiontitle{Introduction}
 
     \input board_introduction.tex
@@ -86,7 +88,7 @@
   \bTR
   \bTD
 
-  \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+  \framed[width=\dimexpr11.5in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
     \sectiontitle{Research Question}
 
     How does treating the peptide clearance rate $\delta_p$ (essentially,
@@ -102,7 +104,7 @@
   \bTR
   \bTD
 
-  \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+  \framed[width=\dimexpr11.5in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
     \sectiontitle{Hypothesis}
 
     If the model for the level of immune cells in the weeks before the onset
@@ -120,66 +122,89 @@
 }
 
 \setlayer[procedures][hoffset=0in,voffset=0.25in]{
-  \bTABLE
-\bTR
-  \bTD
 
-  \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
-    \sectiontitle{Experimental (Materials)}
-
-    \input board_materials
-  }
-  \eTD
-  \eTR
-  \bTR
-  \bTD
-  \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
-    \sectiontitle{Experimental (Procedures)}
+  \framed[width=\dimexpr23in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+    \sectiontitle{Experimental (Materials \& Procedures)}
 
     \input board_procedures
-
   }
-  \eTD
-  \eTR
+%   \bTABLE
+% \bTR
+%   \bTD
 
-  \bTR
-  \bTD
+%   \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+%     \sectiontitle{Experimental (Materials)}
 
-  \eTD
-  \eTR
-  \eTABLE
+%     \input board_materials
+%   }
+%   \eTD
+%   \eTR
+%   \bTR
+%   \bTD
+%   \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+%     \sectiontitle{Experimental (Procedures)}
+%     \input board_procedures
+%   }
+%   \eTD
+%   \eTR
+
+%   \bTR
+%   \bTD
+
+%   \eTD
+%   \eTR
+%   \eTABLE
 }
 
 \setlayer[results][hoffset=0in,voffset=0.25in]{
-  \bTABLE
-  \bTR
-  \bTD
+  % \bTABLE
+  % \bTR
+  % \bTD
   \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
     \sectiontitle{Results}
     \showplot{bifurcation_combined_12}
+    \startalignment[middle]
+      {\bf Figure 1.} Combined diagram showing T cell level over time (as beta cell level decreases), over a duration of 200 days
+    \stopalignment
+
     \showplot{bifurcation_combined_12_long}
+    \startalignment[middle]
+      {\bf Figure 2.} Combined diagram showing T cell level over time (as beta cell level decreases), but over a duration of 1000 days
+    \stopalignment
+
     \showplot{bifurcation_combined_21}
+    \startalignment[middle]
+      {\bf Figure 3.} Combined diagram showing T cell level over time (as beta cell level {\em increases}), over a duration of 200 days
+    \stopalignment
+
+    \showplot{bifurcation_combined_h2_forward}
+    \startalignment[middle]
+      {\bf Figure 4.} Combined diagram showing T cell level over time (as
+      beta cell level {\em increases}), over a duration of 3200 days
+    \stopalignment
 
     \indenting[no]
-      More T cells (higher A) = more beta cells destroyed
 
       Not all parameter ranges tested are shown for lack of space
 
 
   }
-  \eTD
-  \eTR
+  % \eTD
+  % \eTR
 
-  \bTR
-  \bTD
+  % \bTR
+  % \bTD
+}
+
+\setlayer[resultsb][hoffset=0in,voffset=0.25in]{
   \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
     \sectiontitle{Discussion of Results}
 
     \input board_discussion
   }
-  \eTR
-  \eTD
-  \eTABLE
+  % \eTR
+  % \eTD
+  % \eTABLE
 }
 
 \setlayer[discussion][hoffset=0in,voffset=0.25in]{
@@ -187,7 +212,7 @@
 
   \bTR
   \bTD
-  \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+  \framed[width=\dimexpr11.5in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
     \sectiontitle{Conclusion}
 
     \input board_conclusion
@@ -197,7 +222,7 @@
 
   \bTR
   \bTD
-  \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+  \framed[width=\dimexpr11.5in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
     \sectiontitle{Future Research}
 
     \input board_future_research
@@ -207,17 +232,19 @@
 
   \bTR
   \bTD
-  \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+  \framed[width=\dimexpr11.5in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
     \sectiontitle{Works Cited}
     \switchtobodyfont[22pt]
+    \setupalign[nothyphenated,verytolerant]
     \placebibliography{summary.bib}
+    \setupalign[hyphenated]
   }
   \eTR
   \eTD
 
   \bTR
   \bTD
-  \framed[width=\dimexpr11in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
+  \framed[width=\dimexpr11.5in-6pt,frame=on,align={normal,high},offset=0.3in,rulethickness=3pt,framecolor=highlight,foregroundcolor=foreground,background=color,backgroundcolor=background]{
     \sectiontitle{Acknowledgements}
 
       Thanks to Dr.\ Michael McKelvy, Dr.\ Stephen Baer, Dr.\ Joseph
@@ -229,7 +256,7 @@
   \eTABLE
 }
 
-\setupbackgrounds[page][background={color,title,introduction,procedures,results,discussion},backgroundcolor=background]
+\setupbackgrounds[page][background={color,title,introduction,procedures,results,resultsb,discussion},backgroundcolor=background]
 \starttext
 
 ~

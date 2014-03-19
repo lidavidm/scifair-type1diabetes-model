@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="527.42126"
+   height="431.64835"
+   viewBox="0 0 421.93808 345.31839"
+   version="1.2"
+   id="svg2"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="bifurcation.svg">
+  <metadata
+     id="metadata134">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1053"
+     id="namedview132"
+     showgrid="false"
+     inkscape:zoom="1.3024551"
+     inkscape:cx="210.88006"
+     inkscape:cy="256.62137"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g10"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <title
+     id="title4">Qt Svg Document</title>
+  <desc
+     id="desc6">Generated with Qt</desc>
+  <defs
+     id="defs8">
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Send"
+       style="overflow:visible;">
+      <path
+         id="path3942"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.2) rotate(180) translate(6,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;">
+      <path
+         id="path3936"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path3930"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+  </defs>
+  <g
+     id="g10"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel"
+     transform="translate(-58.0813,-14.537448)">
+    <rect
+       style="fill:#ffffff;stroke:none"
+       id="rect4762"
+       width="421.60107"
+       height="344.80087"
+       x="58.081299"
+       y="15.055546" />
+    <g
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g12"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g14"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g20"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="matrix(0,-1.004,1.004,0,-9.538,330.536)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g22"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="matrix(0,-1.004,1.004,0,-9.538,330.536)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g24"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="matrix(0,-1.004,1.004,0,-9.538,330.536)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g30"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g32"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="matrix(0,-1.004,1.004,0,-9.538,330.536)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g34"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="matrix(0,-1.004,1.004,0,-9.538,330.536)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g36"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="matrix(0,-1.004,1.004,0,-9.538,330.536)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g38"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="matrix(1.004,0,0,1.004,164.499,381.018)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g40"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="matrix(1.004,0,0,1.004,164.499,381.018)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g42"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="matrix(1.004,0,0,1.004,164.499,381.018)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g48"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g50"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="matrix(1.004,0,0,1.004,164.499,381.018)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g52"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="matrix(1.004,0,0,1.004,164.499,381.018)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g54"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="matrix(1.004,0,0,1.004,164.499,381.018)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g56"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g58"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g64"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g66"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g72"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g74"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g80"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g82"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g88"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g90"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g96"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g98"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g100"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g102"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g108"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g110"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g112"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g114"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g120"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g122"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="scale(1.004,1.004)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g128"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g130"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo" />
+    <g
+       transform="matrix(0,-1.004,1.004,0,49.662149,322.88078)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g26"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:#000000;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo">
+      <text
+         xml:space="preserve"
+         x="4"
+         y="28"
+         font-size="18"
+         font-weight="400"
+         font-style="normal"
+         id="text28"
+         style="font-size:18px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Source Sans Pro"><tspan
+           style="font-size:27.09170151000000004px;stroke:none;fill:#000000"
+           id="tspan3046">Max/Min of System Value</tspan></text>
+    </g>
+    <g
+       transform="matrix(1.004,0,0,1.004,182.64309,331.41792)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g44"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:#000000;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arimo">
+      <text
+         xml:space="preserve"
+         x="4"
+         y="28"
+         font-size="18"
+         font-weight="400"
+         font-style="normal"
+         id="text46"
+         style="font-size:18px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Source Sans Pro"><tspan
+           style="font-size:27.09170151000000004px;stroke:none;fill:#000000"
+           id="tspan3048">Parameter Value</tspan></text>
+      <text
+         style="font-size:18px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Source Sans Pro"
+         id="text4754"
+         font-style="normal"
+         font-weight="400"
+         font-size="18"
+         y="-212.63806"
+         x="4"
+         xml:space="preserve"><tspan
+           id="tspan4756"
+           style="font-size:27.09170151px;fill:#000000;stroke:none">Bifurcation Point</tspan></text>
+      <rect
+         style="fill:#ffffff;stroke:#ffffff;stroke-width:2.39044428;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect4760"
+         width="98.496429"
+         height="36.706741"
+         x="-122.87031"
+         y="-9.576766" />
+    </g>
+    <g
+       transform="matrix(0.87557101,0,0,0.87557101,61.4019,1.8622204)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g104"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;font-family:Arimo">
+      <path
+         vector-effect="none"
+         d="m 23.3,200.6 0,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,-2.9 0.5,-2.2 0.4,-1.5 0.5,-1.2 0.4,-1 0.5,-0.9 0.5,-0.9 0.4,-0.8 0.5,-0.7 0.4,-0.7 0.5,-0.6 0.4,-0.7 0.5,-0.6 0.4,-0.5 0.5,-0.6 0.4,-0.5 0.5,-0.5 0.4,-0.5 0.5,-0.5 0.5,-0.5 0.4,-0.5 0.5,-0.4 0.4,-0.5 0.5,-0.4 0.4,-0.4 0.5,-0.4 0.4,-0.4 0.5,-0.4 0.4,-0.4 0.5,-0.4 0.5,-0.4 0.4,-0.4 0.5,-0.3 0.4,-0.4 0.5,-0.3 0.4,-0.4 0.5,-0.3 0.4,-0.4 0.5,-0.3 0.4,-0.4 0.5,-0.3 0.5,-0.3 0.4,-0.3 0.5,-0.3 0.4,-0.4 0.5,-0.3 0.4,-0.3 0.5,-0.3 0.4,-0.3 0.5,-0.3 0.4,-0.3 0.5,-0.2 0.4,-0.3 0.5,-0.3 0.5,-0.3 0.4,-0.3 0.5,-0.3 0.4,-0.2 0.5,-0.3 0.4,-0.3 0.5,-0.2 0.4,-0.3 0.5,-0.3 0.4,-0.2 0.5,-0.3 0.5,-0.3 0.4,-0.2 0.5,-0.3 0.4,-0.2 0.5,-0.3 0.4,-0.2 0.5,-0.3 0.4,-0.2 0.5,-0.2 0.4,-0.3 0.5,-0.2 0.5,-0.3 0.4,-0.2 0.5,-0.2 0.4,-0.3 0.5,-0.2 0.4,-0.2 0.5,-0.3 0.4,-0.2 0.5,-0.2 0.4,-0.2 0.5,-0.3 0.4,-0.2 0.5,-0.2 0.5,-0.2 0.4,-0.2 0.5,-0.3 0.4,-0.2 0.5,-0.2 0.4,-0.2 0.5,-0.2 0.4,-0.2 0.5,-0.2 0.4,-0.2 0.5,-0.3 0.5,-0.2 0.4,-0.2 0.5,-0.2 0.4,-0.2 0.5,-0.2 0.4,-0.2 0.5,-0.2 0.4,-0.2 0.5,-0.2 0.4,-0.2 0.5,-0.2 0.4,-0.2 0.5,-0.2 0.5,-0.2 0.4,-0.2 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.4,-0.2 0.5,-0.2 0.4,-0.2 0.5,-0.2 0.4,-0.2 0.5,-0.2 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.4,-0.2 0.5,-0.2 0.4,-0.2 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.4,-0.2 0.5,-0.2 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.4,-0.2 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.4,-0.2 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.4,-0.2 0.5,-0.1 0.5,-0.2 0.4,-0.2 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.4,-0.2 0.5,-0.1 0.4,-0.2 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.4,-0.2 0.5,-0.1 0.4,-0.2 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.4,-0.2 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.4,-0.1 0.5,-0.2 0.5,-0.1 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.4,-0.1 0.5,-0.2 0.5,-0.1 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.2 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.2 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.2 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.2 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,0 0.5,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,0 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1 0.4,-0.1 0.5,-0.1"
+         id="path106"
+         inkscape:connector-curvature="0"
+         style="stroke:#000000;fill:none" />
+    </g>
+    <g
+       transform="matrix(0.87557101,0,0,0.87557101,61.4019,1.8622204)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g116"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;font-family:Arimo">
+      <path
+         vector-effect="none"
+         d="m 23.3,200.6 0,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.5,0 0.4,0 0.5,0 0.4,0 0.5,0 0.4,2.9 0.5,2.2 0.4,1.5 0.5,1.2 0.4,1 0.5,0.9 0.5,0.9 0.4,0.8 0.5,0.7 0.4,0.7 0.5,0.6 0.4,0.7 0.5,0.6 0.4,0.5 0.5,0.6 0.4,0.5 0.5,0.5 0.4,0.5 0.5,0.5 0.5,0.5 0.4,0.5 0.5,0.4 0.4,0.5 0.5,0.4 0.4,0.4 0.5,0.4 0.4,0.4 0.5,0.4 0.4,0.4 0.5,0.4 0.5,0.4 0.4,0.4 0.5,0.3 0.4,0.4 0.5,0.3 0.4,0.4 0.5,0.3 0.4,0.4 0.5,0.3 0.4,0.4 0.5,0.3 0.5,0.3 0.4,0.3 0.5,0.3 0.4,0.4 0.5,0.3 0.4,0.3 0.5,0.3 0.4,0.3 0.5,0.3 0.4,0.3 0.5,0.2 0.4,0.3 0.5,0.3 0.5,0.3 0.4,0.3 0.5,0.3 0.4,0.2 0.5,0.3 0.4,0.3 0.5,0.2 0.4,0.3 0.5,0.3 0.4,0.2 0.5,0.3 0.5,0.3 0.4,0.2 0.5,0.3 0.4,0.2 0.5,0.3 0.4,0.2 0.5,0.3 0.4,0.2 0.5,0.2 0.4,0.3 0.5,0.2 0.5,0.3 0.4,0.2 0.5,0.2 0.4,0.3 0.5,0.2 0.4,0.2 0.5,0.3 0.4,0.2 0.5,0.2 0.4,0.2 0.5,0.3 0.4,0.2 0.5,0.2 0.5,0.2 0.4,0.2 0.5,0.3 0.4,0.2 0.5,0.2 0.4,0.2 0.5,0.2 0.4,0.2 0.5,0.2 0.4,0.2 0.5,0.3 0.5,0.2 0.4,0.2 0.5,0.2 0.4,0.2 0.5,0.2 0.4,0.2 0.5,0.2 0.4,0.2 0.5,0.2 0.4,0.2 0.5,0.2 0.4,0.2 0.5,0.2 0.5,0.2 0.4,0.2 0.5,0.2 0.4,0.1 0.5,0.2 0.4,0.2 0.5,0.2 0.4,0.2 0.5,0.2 0.4,0.2 0.5,0.2 0.5,0.2 0.4,0.1 0.5,0.2 0.4,0.2 0.5,0.2 0.4,0.2 0.5,0.2 0.4,0.1 0.5,0.2 0.4,0.2 0.5,0.2 0.5,0.2 0.4,0.1 0.5,0.2 0.4,0.2 0.5,0.2 0.4,0.1 0.5,0.2 0.4,0.2 0.5,0.2 0.4,0.1 0.5,0.2 0.4,0.2 0.5,0.1 0.5,0.2 0.4,0.2 0.5,0.2 0.4,0.1 0.5,0.2 0.4,0.2 0.5,0.1 0.4,0.2 0.5,0.2 0.4,0.1 0.5,0.2 0.5,0.2 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.2 0.4,0.2 0.5,0.1 0.4,0.2 0.5,0.2 0.4,0.1 0.5,0.2 0.5,0.1 0.4,0.2 0.5,0.1 0.4,0.2 0.5,0.2 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.2 0.5,0.2 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.2 0.5,0.1 0.4,0.2 0.5,0.1 0.4,0.2 0.5,0.1 0.4,0.2 0.5,0.1 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.2 0.5,0.1 0.4,0.2 0.5,0.1 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.1 0.5,0.2 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.1 0.4,0.2 0.5,0.1 0.4,0.2 0.5,0.1 0.4,0.1 0.5,0.2 0.5,0.1 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.1 0.4,0.2 0.5,0.1 0.4,0.2 0.5,0.1 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.1 0.5,0.2 0.4,0.1 0.5,0.1 0.4,0.2 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.2 0.5,0.1 0.4,0.1 0.5,0.2 0.5,0.1 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.1 0.4,0.2 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.2 0.5,0.1 0.5,0.1 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.1 0.4,0.2 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.2 0.5,0.1 0.4,0.1 0.5,0.1 0.5,0.2 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.2 0.5,0.1 0.5,0.1 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.2 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.2 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.2 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.5,0.2 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.2 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.5,0.1 0.4,0.2 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.2 0.5,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.2 0.5,0.1 0.4,0.1 0.5,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.2 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.2 0.5,0.1 0.4,0.1 0.5,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.5,0.1 0.4,0.1 0.5,0.2 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0 0.5,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0.1 0.4,0.1 0.5,0"
+         id="path118"
+         inkscape:connector-curvature="0"
+         style="stroke:#000000;fill:none" />
+    </g>
+    <g
+       transform="matrix(0.87557101,0,0,0.87557101,61.4019,1.612771)"
+       font-size="11"
+       font-weight="400"
+       font-style="normal"
+       id="g124"
+       style="font-size:11px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;font-family:Arimo">
+      <path
+         vector-effect="none"
+         d="m 23.5,15.5 0,370 454,0 0,-370 -454,0"
+         id="path126"
+         inkscape:connector-curvature="0"
+         style="stroke:#000000;fill:none" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2.40000606;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Send)"
+       d="m 279.08892,123.02285 0,42.99584"
+       id="path3153"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

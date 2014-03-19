@@ -5,9 +5,22 @@ bars on the original data, the simulations here still show the
 characteristic pattern of low T cell levels that then transition into
 oscillatory \quotation{spiking}. Thus, this confirms the veracity of the
 original model under a more biologically accurate continuous
-analysis. Furthermore, the results suggest that 1) with sensitive enough
-tests, the oscillations characteristic of the disease may be detectable
-earlier than expected, and that 2) slowing the rate of beta cell destruction
-may delay, but not prevent, those oscillations. Therefore, researchers
-interested in completely preventing this disease may want to investigate
-other variables of the model.
+analysis. However, the results herein further suggest that 1) with sensitive
+enough tests, the oscillations characteristic of the disease may be
+detectable earlier than expected, and that 2) slowing the rate of beta cell
+destruction may delay, but not prevent, those oscillations. Therefore,
+researchers interested in completely preventing this disease may want to
+investigate other variables of the model, and being able to theoretically
+detect the onset of type 1 diabetes earlier than expected before would allow
+more time for treatment and hopefully a higher quality of life for those
+affected.
+
+Experimental error in this model may result from round-off due to finite
+numerical precision. To address this, {\tt mpmath} with Python allowed the
+calculations to be conducted at higher precision for comparison with the
+result from XPP. Multiple trials were not necessary as the calculations were
+deterministic. (Internally, {\tt mpmath} represents values with an integer
+mantissa and exponent and guarantees the correctness of basic
+arithmetic operations, the only ones used here \cite{Mpmath2013}.) This
+experiment thus demonstrated the viability of Python in research by
+comparing it to the standard tool XPP and showing when it is more capable.

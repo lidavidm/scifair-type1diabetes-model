@@ -1,5 +1,6 @@
 \environment env_simple
 \usemodule[gnuplot]
+\setuphead[title][page=no]
 
 \setupGNUPLOT[terminal=context,options={size 6in,2in}]
 \startGNUPLOTinclusions
@@ -48,7 +49,7 @@
     }
 }
 \starttext
-\title{Introduction}
+\title{Materials}
 
 \indenting[no] David Li \indenting[yes]
 
@@ -77,7 +78,20 @@
       plots.
     \stopitemize
   \stopitem
+
+    \startitem Project Source Code
+
+      \indenting[no]
+      The source code for this project can be downloaded or checked out via
+      {\tt git} from this URL:
+
+      \startalignment[middle]
+        https://github.com/lidavidm/scifair-type1diabetes-model
+      \stopalignment
+    \stopitem
 \stopitemize
+
+\title{Procedures}
 
 XPP AUTO, used in the original paper, is used to compute a bifurcation
 diagram:
@@ -88,7 +102,7 @@ This shows, at a particular level of beta cells, possible states of the
 model (i.e.\ level of T cells). The higher the T cell level, the more beta
 cells can be destroyed. On a steady state, the system remains at a fixed
 level of T cells; in contrast, the level oscillates on a periodic state. If
-a state is steady, then introducing a small deviation will result in the
+a state is stable, then introducing a small deviation will result in the
 system returning to the original state, while an unstable state will move
 towards another state. The points labeled \quotation{HB} are {\em Hopf
   bifurcations}, points at which the system changes qualitative
@@ -99,7 +113,7 @@ $a_{15}$ (= 1/beta cell) level, which varies linearly over time. Because
 this variation is linear, at each time the $a_{15}$ level is unique, and
 thus the $A$ vs $t$ plot of this model can be overlaid on the bifurcation
 diagram as a $A$ vs $a_{15}$ plot, allowing them to be compared (see the
-diagrams below).
+{\em Results} section).
 
 The model equations are
 
