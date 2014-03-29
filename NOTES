@@ -1,3 +1,5 @@
+DATE FORMAT DD/MM/YYYY
+
 23/11/2013:
 
 - Python and XPP did not match. Copied the equations from the XPP file to
@@ -283,3 +285,10 @@
 - No space for λ analysis on board; will have to leave for the paper
 - Reduced base font size to 25pt (from 26pt) to fit more on the board
 - Pushed a backup of everything to Bitbucket
+
+6/3/2014
+- Looking for example to demonstrate importance of numerical precision
+  - Based on Baer 1989
+  - Rate of increase has a small effect on destabilization
+    - Need way to automatically determine time of destabilization
+    - Precision does not seem to matter
